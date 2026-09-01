@@ -7,10 +7,10 @@
 <title>गंगा अटल | सत्य धारा, अटल निष्पक्ष</title>
 
 <meta name="description"
-content="गंगा अटल - सत्य धारा, अटल निष्पक्ष. महाराष्ट्र, देश, राजकारण, क्रीडा आणि मनोरंजनातील ताज्या बातम्या.">
+content="गंगा अटल - सत्य धारा, अटल निष्पक्ष. महाराष्ट्र, देश, राजकारण, क्रीडा आणि मनोरंजन क्षेत्रातील ताज्या बातम्या.">
 
 <meta name="keywords"
-content="गंगा अटल, मराठी बातम्या, महाराष्ट्र न्यूज, ताज्या बातम्या, Marathi News">
+content="गंगा अटल, मराठी न्यूज, महाराष्ट्र बातम्या, ताज्या बातम्या, Marathi News, Maharashtra News">
 
 <style>
 
@@ -21,29 +21,32 @@ content="गंगा अटल, मराठी बातम्या, मह�
 }
 
 :root{
-    --red:#e21b23;
+    --red:#e51b23;
+    --red-dark:#c9141c;
     --dark:#111827;
     --dark2:#1f2937;
-    --light:#f4f6f8;
-    --white:#ffffff;
+    --bg:#f4f5f7;
     --text:#171717;
-    --muted:#6b7280;
-    --border:#e5e7eb;
-}
-
-html{
-    scroll-behavior:smooth;
+    --muted:#667085;
+    --white:#ffffff;
+    --border:#e1e5ea;
+    --shadow:0 8px 24px rgba(17,24,39,.08);
 }
 
 body{
-    font-family:
-    Arial,
-    "Noto Sans Devanagari",
-    "Nirmala UI",
-    sans-serif;
-    background:var(--light);
+    font-family:Arial,"Noto Sans Devanagari","Nirmala UI",sans-serif;
+    background:var(--bg);
     color:var(--text);
     line-height:1.6;
+}
+
+body.dark{
+    --bg:#0b1120;
+    --text:#f8fafc;
+    --white:#111827;
+    --border:#293548;
+    --muted:#b8c0cc;
+    --shadow:0 8px 24px rgba(0,0,0,.3);
 }
 
 a{
@@ -53,116 +56,119 @@ a{
 
 button,
 input{
-    font:inherit;
+    font-family:inherit;
 }
 
-/* TOP BAR */
+button{
+    cursor:pointer;
+}
+
+/* =========================
+   TOP BAR
+========================= */
 
 .topbar{
     background:var(--dark);
-    color:white;
+    color:#fff;
     font-size:14px;
 }
 
 .topbar-inner{
-    max-width:1200px;
+    max-width:1180px;
     margin:auto;
-    padding:8px 18px;
+    padding:7px 16px;
     display:flex;
     justify-content:space-between;
-    gap:15px;
+    gap:20px;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
-.header{
-    background:white;
+header{
+    background:var(--white);
+    border-bottom:3px solid var(--red);
 }
 
 .header-inner{
-    max-width:1200px;
+    max-width:1180px;
     margin:auto;
-    min-height:125px;
-    padding:18px;
+    min-height:150px;
+    padding:20px 16px;
     display:flex;
     align-items:center;
     justify-content:space-between;
     gap:30px;
 }
 
-.logo-area{
-    display:flex;
-    align-items:center;
-    gap:18px;
-}
-
 .logo{
-    width:300px;
+    width:430px;
     max-width:100%;
-    height:85px;
+    height:95px;
     object-fit:contain;
+    object-position:left center;
 }
 
-.logo-text h1{
-    color:var(--red);
-    font-size:48px;
-    font-weight:900;
-    line-height:1;
+.header-right{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:14px;
 }
 
-.logo-text p{
-    margin-top:8px;
-    font-weight:bold;
-    color:#333;
-}
-
-/* LANGUAGE */
-
-.languages{
+.language-buttons{
     display:flex;
     gap:8px;
 }
 
-.languages button{
-    border:1px solid #d1d5db;
-    background:white;
-    padding:8px 14px;
+.language-buttons button{
+    border:1px solid #ccd2da;
+    background:var(--white);
+    color:var(--text);
+    padding:9px 16px;
     border-radius:7px;
-    cursor:pointer;
     font-weight:bold;
 }
 
-.languages button.active,
-.languages button:hover{
-    background:var(--red);
-    color:white;
+.language-buttons button:hover{
     border-color:var(--red);
 }
 
-/* NAVIGATION */
+.language-buttons button.active{
+    background:var(--red);
+    color:#fff;
+    border-color:var(--red);
+}
 
-.navbar{
+.dark-btn{
+    background:var(--red);
+    color:#fff;
+    border:0;
+    border-radius:7px;
+    padding:10px 18px;
+    font-weight:bold;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
     background:var(--dark);
-    border-bottom:4px solid var(--red);
-    position:sticky;
-    top:0;
-    z-index:100;
+    color:#fff;
 }
 
 .nav-inner{
-    max-width:1200px;
+    max-width:1180px;
     margin:auto;
-    padding:0 18px;
     display:flex;
     align-items:center;
-    gap:5px;
-    overflow-x:auto;
+    flex-wrap:wrap;
 }
 
 .nav-inner a{
-    color:white;
-    padding:15px 18px;
-    white-space:nowrap;
+    padding:13px 21px;
     font-weight:bold;
     transition:.2s;
 }
@@ -172,306 +178,64 @@ input{
     background:var(--red);
 }
 
-/* CONTAINER */
+/* =========================
+   MAIN
+========================= */
 
 .container{
-    max-width:1200px;
-    margin:auto;
-    padding:18px;
+    max-width:1180px;
+    margin:20px auto;
+    padding:0 16px;
 }
 
-/* BREAKING NEWS */
+/* =========================
+   BREAKING NEWS
+========================= */
 
 .breaking{
-    background:white;
+    background:var(--white);
     border-radius:10px;
     overflow:hidden;
     display:flex;
     align-items:center;
+    box-shadow:var(--shadow);
     margin-bottom:18px;
-    box-shadow:0 3px 15px rgba(0,0,0,.06);
 }
 
 .breaking-title{
     background:var(--red);
-    color:white;
+    color:#fff;
     padding:12px 20px;
-    font-weight:900;
+    font-weight:bold;
     white-space:nowrap;
 }
 
-.breaking-news{
-    padding:10px 18px;
+.breaking-text{
+    padding:12px 20px;
     font-weight:bold;
     overflow:hidden;
     white-space:nowrap;
 }
 
-.breaking-news span{
-    display:inline-block;
-    animation:ticker 18s linear infinite;
-}
-
-@keyframes ticker{
-    from{
-        transform:translateX(100%);
-    }
-    to{
-        transform:translateX(-100%);
-    }
-}
-
-/* GRID */
-
-.main-grid{
-    display:grid;
-    grid-template-columns:2fr 1fr;
-    gap:18px;
-}
-
-/* CARD */
-
-.card{
-    background:white;
-    border:1px solid var(--border);
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 5px 18px rgba(0,0,0,.05);
-}
-
-.card-body{
-    padding:20px;
-}
-
-/* SECTION TITLE */
-
-.section-title{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-bottom:18px;
-    border-bottom:1px solid var(--border);
-    padding-bottom:10px;
-}
-
-.section-title:before{
-    content:"";
-    width:5px;
-    height:30px;
-    background:var(--red);
-    border-radius:5px;
-}
-
-.section-title h2{
-    font-size:25px;
-}
-
-/* HERO */
-
-.hero{
-    position:relative;
-    height:430px;
-    overflow:hidden;
-    background:
-    linear-gradient(
-        rgba(0,0,0,.1),
-        rgba(0,0,0,.75)
-    ),
-    url("logo-4.jpg") center/cover;
-}
-
-.hero-content{
-    position:absolute;
-    bottom:0;
-    left:0;
-    right:0;
-    padding:28px;
-    color:white;
-}
-
-.category{
-    display:inline-block;
-    background:var(--red);
-    color:white;
-    padding:5px 10px;
-    border-radius:5px;
-    font-size:13px;
-    font-weight:bold;
-    margin-bottom:10px;
-}
-
-.hero h2{
-    font-size:34px;
-    line-height:1.25;
-    margin-bottom:8px;
-}
-
-.hero p{
-    opacity:.9;
-}
-
-/* NEWS LIST */
-
-.news-list{
-    display:grid;
-    gap:14px;
-}
-
-.news-item{
-    display:grid;
-    grid-template-columns:120px 1fr;
-    gap:15px;
-    padding-bottom:14px;
-    border-bottom:1px solid var(--border);
-}
-
-.news-item:last-child{
-    border-bottom:0;
-}
-
-.news-image{
-    height:90px;
-    border-radius:8px;
-    background:
-    linear-gradient(135deg,#ddd,#aaa);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#555;
-    font-size:12px;
-}
-
-.news-item h3{
-    font-size:18px;
-    line-height:1.35;
-    margin-bottom:5px;
-}
-
-.date{
-    color:var(--muted);
-    font-size:13px;
-}
-
-/* SIDEBAR */
-
-.sidebar{
-    display:grid;
-    gap:18px;
-}
-
-.epaper{
-    background:linear-gradient(
-        135deg,
-        var(--dark),
-        var(--dark2)
-    );
-    color:white;
-    padding:25px;
-    border-radius:12px;
-}
-
-.epaper h2{
-    font-size:25px;
-    margin-bottom:10px;
-}
-
-.epaper p{
-    color:#e5e7eb;
-    margin-bottom:18px;
-}
-
-.btn{
-    display:inline-block;
-    background:var(--red);
-    color:white;
-    border:0;
-    border-radius:7px;
-    padding:11px 18px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.btn:hover{
-    opacity:.9;
-}
-
-/* POPULAR */
-
-.popular{
-    padding:20px;
-}
-
-.popular-item{
-    display:flex;
-    gap:12px;
-    padding:13px 0;
-    border-bottom:1px solid var(--border);
-}
-
-.popular-item:last-child{
-    border-bottom:0;
-}
-
-.number{
-    min-width:32px;
-    height:32px;
-    background:var(--red);
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    font-weight:bold;
-}
-
-.popular-item h3{
-    font-size:16px;
-    line-height:1.4;
-}
-
-/* CATEGORY GRID */
-
-.category-section{
-    margin-top:20px;
-}
-
-.category-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
-}
-
-.category-card{
-    background:white;
-    border:1px solid var(--border);
-    border-radius:12px;
-    padding:20px;
-    transition:.2s;
-}
-
-.category-card:hover{
-    transform:translateY(-3px);
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
-}
-
-.category-card h3{
-    color:var(--red);
-    margin-bottom:10px;
-}
-
-/* SEARCH */
+/* =========================
+   SEARCH
+========================= */
 
 .search-box{
     display:flex;
-    gap:8px;
+    gap:10px;
     margin-bottom:20px;
 }
 
 .search-box input{
     flex:1;
+    height:50px;
     border:1px solid var(--border);
-    border-radius:7px;
-    padding:12px 15px;
+    background:var(--white);
+    color:var(--text);
+    border-radius:8px;
+    padding:0 16px;
+    font-size:16px;
     outline:none;
 }
 
@@ -479,116 +243,336 @@ input{
     border-color:var(--red);
 }
 
-/* FOOTER */
-
-footer{
-    background:var(--dark);
-    color:white;
-    margin-top:40px;
+.search-box button{
+    height:50px;
+    padding:0 25px;
+    border:0;
+    background:var(--red);
+    color:#fff;
+    border-radius:8px;
+    font-weight:bold;
 }
 
-.footer-inner{
-    max-width:1200px;
-    margin:auto;
-    padding:40px 18px;
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin:28px 0 16px;
+}
+
+.section-title::before{
+    content:"";
+    width:6px;
+    height:30px;
+    background:var(--red);
+    border-radius:4px;
+}
+
+.section-title h2{
+    font-size:25px;
+}
+
+/* =========================
+   HERO GRID
+========================= */
+
+.hero-grid{
     display:grid;
-    grid-template-columns:2fr 1fr 1fr;
-    gap:35px;
+    grid-template-columns:2fr 1fr;
+    gap:18px;
 }
 
-footer h2,
-footer h3{
+/* =========================
+   MAIN NEWS
+========================= */
+
+.main-news{
+    background:var(--white);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+}
+
+.main-image{
+    width:100%;
+    height:390px;
+    object-fit:cover;
+    display:block;
+}
+
+.main-content{
+    padding:20px;
+}
+
+.category{
+    display:inline-block;
+    background:var(--red);
+    color:#fff;
+    padding:4px 11px;
+    border-radius:5px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.main-content h1{
+    font-size:30px;
+    line-height:1.35;
+    margin:10px 0;
+}
+
+.main-content p{
+    color:var(--muted);
+}
+
+/* =========================
+   SIDE BOX
+========================= */
+
+.sidebar{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.side-box{
+    background:var(--white);
+    border-radius:12px;
+    padding:20px;
+    box-shadow:var(--shadow);
+}
+
+.side-box.dark{
+    background:linear-gradient(135deg,#111827,#253147);
+    color:#fff;
+}
+
+.side-title{
+    font-size:23px;
+    border-left:5px solid var(--red);
+    padding-left:10px;
     margin-bottom:12px;
 }
 
-footer p{
-    color:#d1d5db;
+.side-box p{
+    color:var(--muted);
+    margin-bottom:15px;
 }
 
-footer ul{
-    list-style:none;
+.side-box.dark p{
+    color:#e4e7eb;
 }
 
-footer li{
-    padding:5px 0;
-    color:#d1d5db;
+.red-button{
+    display:inline-block;
+    border:0;
+    background:var(--red);
+    color:#fff;
+    padding:11px 18px;
+    border-radius:7px;
+    font-weight:bold;
+}
+
+.red-button:hover{
+    background:var(--red-dark);
+}
+
+/* =========================
+   NEWS CARDS
+========================= */
+
+.news-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.news-card{
+    background:var(--white);
+    border-radius:11px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    transition:.2s;
+}
+
+.news-card:hover{
+    transform:translateY(-4px);
+}
+
+.news-card img{
+    width:100%;
+    height:190px;
+    object-fit:cover;
+    display:block;
+}
+
+.news-card-content{
+    padding:16px;
+}
+
+.news-card h3{
+    font-size:19px;
+    line-height:1.4;
+    margin:9px 0;
+}
+
+.news-card p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* =========================
+   CATEGORY SECTIONS
+========================= */
+
+.category-section{
+    margin-top:30px;
+}
+
+.category-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px;
+    border-bottom:2px solid var(--border);
+    padding-bottom:8px;
+}
+
+.category-header h2{
+    border-left:5px solid var(--red);
+    padding-left:10px;
+}
+
+.more{
+    color:var(--red);
+    font-weight:bold;
+}
+
+/* =========================
+   E PAPER
+========================= */
+
+.epaper{
+    margin-top:30px;
+    background:linear-gradient(135deg,#111827,#253147);
+    color:#fff;
+    border-radius:12px;
+    padding:28px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.epaper h2{
+    font-size:27px;
+    margin-bottom:7px;
+}
+
+.epaper p{
+    color:#d8dee8;
+}
+
+/* =========================
+   NO RESULT
+========================= */
+
+.no-result{
+    display:none;
+    text-align:center;
+    background:var(--white);
+    padding:30px;
+    border-radius:10px;
+    margin-top:15px;
+    color:var(--muted);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    margin-top:45px;
+    background:var(--dark);
+    color:#fff;
+}
+
+.footer-inner{
+    max-width:1180px;
+    margin:auto;
+    padding:35px 16px;
+    text-align:center;
+}
+
+.footer-logo{
+    font-size:30px;
+    font-weight:900;
+    color:#fff;
+}
+
+.footer-tagline{
+    margin-top:5px;
+    color:#d5d9df;
+}
+
+.footer-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+    margin:20px 0;
+}
+
+.footer-links a:hover{
+    color:#ff4b52;
 }
 
 .copyright{
-    text-align:center;
-    border-top:1px solid #374151;
-    padding:15px;
-    color:#cbd5e1;
+    border-top:1px solid #303949;
+    padding-top:18px;
+    color:#b8c0cc;
+    font-size:14px;
 }
 
-/* DARK MODE */
-
-.dark-mode{
-    --light:#0b1120;
-    --white:#111827;
-    --text:#f3f4f6;
-    --border:#374151;
-    --muted:#9ca3af;
-}
-
-.dark-mode .header,
-.dark-mode .card,
-.dark-mode .category-card,
-.dark-mode .breaking,
-.dark-mode .languages button,
-.dark-mode .search-box input{
-    background:#111827;
-    color:#f3f4f6;
-}
-
-.dark-mode .logo-text p{
-    color:#ddd;
-}
-
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:850px){
-
-    .header-inner{
-        flex-direction:column;
-        text-align:center;
-    }
-
-    .logo{
-        width:270px;
-    }
-
-    .main-grid{
-        grid-template-columns:1fr;
-    }
-
-    .category-grid{
-        grid-template-columns:1fr;
-    }
-
-    .footer-inner{
-        grid-template-columns:1fr;
-    }
-
-    .hero{
-        height:350px;
-    }
-
-    .hero h2{
-        font-size:25px;
-    }
-
-}
-
-@media(max-width:550px){
 
     .topbar-inner{
         flex-direction:column;
         text-align:center;
+        gap:2px;
+    }
+
+    .header-inner{
+        min-height:auto;
+        flex-direction:column;
+        text-align:center;
+        padding:18px 12px;
     }
 
     .logo{
-        width:230px;
+        width:320px;
+        height:auto;
+        object-position:center;
+    }
+
+    .header-right{
+        align-items:center;
+    }
+
+    .nav-inner{
+        justify-content:center;
+    }
+
+    .nav-inner a{
+        padding:10px 13px;
+        font-size:14px;
     }
 
     .breaking{
@@ -600,22 +584,80 @@ footer li{
         text-align:center;
     }
 
-    .news-item{
-        grid-template-columns:90px 1fr;
+    .breaking-text{
+        text-align:center;
+        white-space:normal;
     }
 
-    .news-image{
-        height:70px;
+    .hero-grid{
+        grid-template-columns:1fr;
     }
 
-    .news-item h3{
-        font-size:15px;
+    .main-image{
+        height:300px;
     }
+
+    .news-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .epaper{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+
+@media(max-width:550px){
 
     .container{
-        padding:12px;
+        padding:0 10px;
     }
 
+    .language-buttons{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .nav-inner a{
+        padding:9px 10px;
+        font-size:13px;
+    }
+
+    .search-box{
+        flex-direction:column;
+    }
+
+    .search-box button{
+        width:100%;
+    }
+
+    .main-image{
+        height:230px;
+    }
+
+    .main-content h1{
+        font-size:23px;
+    }
+
+    .news-grid{
+        grid-template-columns:1fr;
+    }
+
+    .news-card img{
+        height:210px;
+    }
+
+    .section-title h2{
+        font-size:21px;
+    }
+
+    .epaper{
+        padding:22px 15px;
+    }
+
+    .epaper h2{
+        font-size:23px;
+    }
 }
 
 </style>
@@ -623,46 +665,55 @@ footer li{
 
 <body>
 
-<!-- TOP BAR -->
+<!-- =========================
+     TOP BAR
+========================= -->
 
 <div class="topbar">
     <div class="topbar-inner">
-        <div>गंगा अटल • सत्य धारा, अटल निष्पक्ष</div>
-        <div>विश्वसनीय बातम्या • स्थानिक घडामोडी</div>
+        <span>गंगा अटल • सत्य धारा, अटल निष्पक्ष</span>
+        <span>विश्वसनीय बातम्या • स्थानिक घडामोडी</span>
     </div>
 </div>
 
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
 
-<header class="header">
+<header>
 
     <div class="header-inner">
 
-        <div class="logo-area">
+        <img src="logo-4.jpg"
+             class="logo"
+             alt="गंगा अटल लोगो">
 
-            <!-- logo-4.jpg असेल तर ते दाखवेल -->
-            <img
-                src="logo-4.jpg"
-                class="logo"
-                alt="गंगा अटल लोगो"
-            >
+        <div class="header-right">
 
-        </div>
+            <div class="language-buttons">
 
-        <div>
+                <button id="marathiBtn"
+                        class="active"
+                        onclick="setLanguage('mr')">
+                    मराठी
+                </button>
 
-            <div class="languages">
-                <button class="active">मराठी</button>
-                <button>हिंदी</button>
-                <button>English</button>
+                <button id="hindiBtn"
+                        onclick="setLanguage('hi')">
+                    हिंदी
+                </button>
+
+                <button id="englishBtn"
+                        onclick="setLanguage('en')">
+                    English
+                </button>
+
             </div>
 
-            <br>
-
-            <button
-                class="btn"
-                onclick="toggleDarkMode()">
+            <button class="dark-btn"
+                    onclick="toggleDarkMode()"
+                    id="darkModeBtn">
                 🌙 Dark Mode
             </button>
 
@@ -673,18 +724,26 @@ footer li{
 </header>
 
 
-<!-- NAVIGATION -->
+<!-- =========================
+     NAVIGATION
+========================= -->
 
-<nav class="navbar">
+<nav>
 
     <div class="nav-inner">
 
-        <a href="#" class="active">मुखपृष्ठ</a>
+        <a href="#home" class="active">मुखपृष्ठ</a>
+
         <a href="#maharashtra">महाराष्ट्र</a>
+
         <a href="#desh">देश</a>
+
         <a href="#rajkaran">राजकारण</a>
+
         <a href="#krida">क्रीडा</a>
+
         <a href="#manoranjan">मनोरंजन</a>
+
         <a href="#epaper">ई-पेपर</a>
 
     </div>
@@ -692,516 +751,845 @@ footer li{
 </nav>
 
 
-<main class="container">
+<!-- =========================
+     MAIN
+========================= -->
+
+<main class="container" id="home">
 
 
-<!-- BREAKING NEWS -->
+    <!-- BREAKING NEWS -->
 
-<div class="breaking">
+    <div class="breaking">
 
-    <div class="breaking-title">
-        🔴 ब्रेकिंग न्यूज
+        <div class="breaking-title">
+            🔴 ब्रेकिंग न्यूज
+        </div>
+
+        <div class="breaking-text"
+             id="breakingText">
+            गंगा अटलवर वाचा महाराष्ट्रातील आणि देशातील ताज्या घडामोडी
+        </div>
+
     </div>
 
-    <div class="breaking-news">
 
-        <span>
-            गंगा अटलवर वाचा महाराष्ट्रातील आणि देशातील ताज्या घडामोडी •
-            महत्त्वाच्या बातम्या • स्थानिक बातम्या • राजकीय घडामोडी
-        </span>
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="बातमी शोधा..."
+            onkeyup="searchNews()">
+
+        <button onclick="searchNews()">
+            🔎 शोधा
+        </button>
 
     </div>
 
-</div>
+
+    <!-- HERO -->
+
+    <div class="hero-grid">
 
 
-<!-- SEARCH -->
+        <!-- MAIN NEWS -->
 
-<div class="search-box">
+        <article class="main-news searchable">
 
-    <input
-        type="search"
-        id="searchInput"
-        placeholder="बातमी शोधा..."
-        onkeyup="searchNews()"
-    >
+            <img
+                src="logo-4.jpg"
+                class="main-image"
+                alt="मुख्य बातमी">
 
-    <button
-        class="btn"
-        onclick="searchNews()">
-        🔎 शोधा
-    </button>
-
-</div>
-
-
-<!-- MAIN GRID -->
-
-<div class="main-grid">
-
-
-<!-- LEFT -->
-
-<section>
-
-    <div class="card">
-
-        <div class="hero">
-
-            <div class="hero-content">
+            <div class="main-content">
 
                 <span class="category">
                     ताज्या बातम्या
                 </span>
 
-                <h2>
-                    महाराष्ट्रातील ताज्या घडामोडी
-                    आणि महत्त्वाच्या बातम्या
-                </h2>
+                <h1>
+                    महाराष्ट्रातील ताज्या घडामोडी आणि महत्त्वाच्या बातम्या
+                </h1>
 
                 <p>
-                    गंगा अटलवर वाचा विश्वासार्ह आणि
-                    निष्पक्ष बातम्या.
+                    महाराष्ट्र, देश, राजकारण, क्रीडा आणि मनोरंजन
+                    क्षेत्रातील ताज्या बातम्या गंगा अटलवर वाचा.
                 </p>
 
             </div>
 
-        </div>
-
-    </div>
+        </article>
 
 
-    <div class="card" style="margin-top:18px;">
+        <!-- SIDEBAR -->
 
-        <div class="card-body">
+        <aside class="sidebar">
 
-            <div class="section-title">
 
-                <h2>
-                    ताज्या बातम्या
+            <div class="side-box dark">
+
+                <h2 class="side-title">
+                    📰 आजचा ई-पेपर
                 </h2>
 
-            </div>
+                <p>
+                    आजचे वर्तमानपत्र PDF स्वरूपात वाचा.
+                </p>
 
-
-            <div class="news-list" id="newsList">
-
-
-                <article class="news-item">
-
-                    <div class="news-image">
-                        बातमी फोटो
-                    </div>
-
-                    <div>
-
-                        <span class="category">
-                            महाराष्ट्र
-                        </span>
-
-                        <h3>
-                            महाराष्ट्रातील महत्त्वाच्या
-                            घडामोडींवर गंगा अटलचा विशेष रिपोर्ट
-                        </h3>
-
-                        <div class="date">
-                            आज • 10 मिनिटांपूर्वी
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <article class="news-item">
-
-                    <div class="news-image">
-                        बातमी फोटो
-                    </div>
-
-                    <div>
-
-                        <span class="category">
-                            राजकारण
-                        </span>
-
-                        <h3>
-                            राज्यातील राजकीय घडामोडींना वेग;
-                            नेत्यांच्या बैठका सुरू
-                        </h3>
-
-                        <div class="date">
-                            आज • 25 मिनिटांपूर्वी
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <article class="news-item">
-
-                    <div class="news-image">
-                        बातमी फोटो
-                    </div>
-
-                    <div>
-
-                        <span class="category">
-                            देश
-                        </span>
-
-                        <h3>
-                            देशातील महत्त्वाच्या घडामोडींचा
-                            जाणून घ्या संपूर्ण आढावा
-                        </h3>
-
-                        <div class="date">
-                            आज • 40 मिनिटांपूर्वी
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <article class="news-item">
-
-                    <div class="news-image">
-                        बातमी फोटो
-                    </div>
-
-                    <div>
-
-                        <span class="category">
-                            क्रीडा
-                        </span>
-
-                        <h3>
-                            क्रीडा विश्वातील आजच्या
-                            महत्त्वाच्या बातम्या
-                        </h3>
-
-                        <div class="date">
-                            आज • 1 तासापूर्वी
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <article class="news-item">
-
-                    <div class="news-image">
-                        बातमी फोटो
-                    </div>
-
-                    <div>
-
-                        <span class="category">
-                            मनोरंजन
-                        </span>
-
-                        <h3>
-                            मनोरंजन विश्वातील ताज्या
-                            घडामोडी आणि अपडेट्स
-                        </h3>
-
-                        <div class="date">
-                            आज • 2 तासांपूर्वी
-                        </div>
-
-                    </div>
-
-                </article>
+                <a href="#epaper"
+                   class="red-button">
+                    ई-पेपर वाचा
+                </a>
 
             </div>
 
-        </div>
 
-    </div>
+            <div class="side-box">
 
-</section>
+                <h2 class="side-title">
+                    लोकप्रिय बातम्या
+                </h2>
 
+                <p>
+                    महाराष्ट्र आणि देशातील महत्त्वाच्या
+                    बातम्यांचे अपडेट येथे वाचा.
+                </p>
 
-<!-- SIDEBAR -->
+                <a href="#latest"
+                   class="red-button">
+                    सर्व बातम्या
+                </a>
 
-<aside class="sidebar">
-
-
-<!-- EPAPER -->
-
-<div class="epaper" id="epaper">
-
-    <h2>
-        📰 आजचा ई-पेपर
-    </h2>
-
-    <p>
-        आजचे वर्तमानपत्र PDF स्वरूपात वाचा.
-    </p>
-
-    <button
-        class="btn"
-        onclick="openEpaper()">
-        ई-पेपर वाचा
-    </button>
-
-</div>
+            </div>
 
 
-<!-- POPULAR -->
-
-<div class="card popular">
-
-    <div class="section-title">
-
-        <h2>
-            लोकप्रिय बातम्या
-        </h2>
+        </aside>
 
     </div>
 
 
-    <div class="popular-item">
+    <!-- =========================
+         LATEST NEWS
+    ========================= -->
 
-        <div class="number">1</div>
+    <section id="latest">
 
-        <h3>
-            महाराष्ट्रातील आजच्या प्रमुख
-            बातम्या एका क्लिकवर
-        </h3>
-
-    </div>
-
-
-    <div class="popular-item">
-
-        <div class="number">2</div>
-
-        <h3>
-            राज्यातील महत्त्वाच्या राजकीय
-            घडामोडी
-        </h3>
-
-    </div>
-
-
-    <div class="popular-item">
-
-        <div class="number">3</div>
-
-        <h3>
-            देशातील ताज्या घडामोडी
-        </h3>
-
-    </div>
-
-
-    <div class="popular-item">
-
-        <div class="number">4</div>
-
-        <h3>
-            क्रीडा विश्वातील मोठ्या बातम्या
-        </h3>
-
-    </div>
-
-
-    <div class="popular-item">
-
-        <div class="number">5</div>
-
-        <h3>
-            मनोरंजन क्षेत्रातील ताजे अपडेट्स
-        </h3>
-
-    </div>
-
-</div>
-
-</aside>
-
-</div>
-
-
-<!-- CATEGORIES -->
-
-<section class="category-section">
-
-    <div class="section-title">
-        <h2>
-            विभाग
-        </h2>
-    </div>
-
-
-    <div class="category-grid">
-
-
-        <div
-            class="category-card"
-            id="maharashtra">
-
-            <h3>महाराष्ट्र</h3>
-
-            <p>
-                महाराष्ट्रातील जिल्हानिहाय,
-                स्थानिक आणि राज्यातील ताज्या बातम्या.
-            </p>
-
+        <div class="section-title">
+            <h2>ताज्या बातम्या</h2>
         </div>
 
 
-        <div
-            class="category-card"
-            id="desh">
+        <div class="news-grid">
 
-            <h3>देश</h3>
 
-            <p>
-                देशभरातील महत्त्वाच्या
-                राष्ट्रीय घडामोडी.
-            </p>
+            <article class="news-card searchable">
+
+                <img src="logo-4.jpg"
+                     alt="महाराष्ट्र बातमी">
+
+                <div class="news-card-content">
+
+                    <span class="category">
+                        महाराष्ट्र
+                    </span>
+
+                    <h3>
+                        महाराष्ट्रातील आजच्या महत्त्वाच्या घडामोडी
+                    </h3>
+
+                    <p>
+                        राज्यातील ताज्या बातम्या आणि महत्त्वाचे अपडेट.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="news-card searchable">
+
+                <img src="logo-4.jpg"
+                     alt="देश बातमी">
+
+                <div class="news-card-content">
+
+                    <span class="category">
+                        देश
+                    </span>
+
+                    <h3>
+                        देशातील आजच्या महत्त्वाच्या बातम्या
+                    </h3>
+
+                    <p>
+                        देशभरातील ताज्या घडामोडी आणि बातम्या.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="news-card searchable">
+
+                <img src="logo-4.jpg"
+                     alt="राजकारण बातमी">
+
+                <div class="news-card-content">
+
+                    <span class="category">
+                        राजकारण
+                    </span>
+
+                    <h3>
+                        राजकारणातील आजचे महत्त्वाचे अपडेट
+                    </h3>
+
+                    <p>
+                        राजकीय घडामोडींची ताजी माहिती.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="news-card searchable">
+
+                <img src="logo-4.jpg"
+                     alt="क्रीडा बातमी">
+
+                <div class="news-card-content">
+
+                    <span class="category">
+                        क्रीडा
+                    </span>
+
+                    <h3>
+                        क्रीडा विश्वातील ताज्या घडामोडी
+                    </h3>
+
+                    <p>
+                        विविध खेळांमधील ताजे अपडेट आणि बातम्या.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="news-card searchable">
+
+                <img src="logo-4.jpg"
+                     alt="मनोरंजन बातमी">
+
+                <div class="news-card-content">
+
+                    <span class="category">
+                        मनोरंजन
+                    </span>
+
+                    <h3>
+                        मनोरंजन विश्वातील ताज्या बातम्या
+                    </h3>
+
+                    <p>
+                        सिनेमा, कलाकार आणि मनोरंजन क्षेत्रातील अपडेट.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="news-card searchable">
+
+                <img src="logo-4.jpg"
+                     alt="स्थानिक बातमी">
+
+                <div class="news-card-content">
+
+                    <span class="category">
+                        स्थानिक
+                    </span>
+
+                    <h3>
+                        स्थानिक घडामोडींचे ताजे अपडेट
+                    </h3>
+
+                    <p>
+                        आपल्या परिसरातील महत्त्वाच्या बातम्या.
+                    </p>
+
+                </div>
+
+            </article>
+
 
         </div>
 
-
-        <div
-            class="category-card"
-            id="rajkaran">
-
-            <h3>राजकारण</h3>
-
-            <p>
-                महाराष्ट्र आणि देशातील
-                राजकीय घडामोडींचा आढावा.
-            </p>
-
-        </div>
+    </section>
 
 
-        <div
-            class="category-card"
-            id="krida">
-
-            <h3>क्रीडा</h3>
-
-            <p>
-                क्रिकेट, फुटबॉल आणि
-                इतर क्रीडा विश्वातील बातम्या.
-            </p>
-
-        </div>
-
-
-        <div
-            class="category-card"
-            id="manoranjan">
-
-            <h3>मनोरंजन</h3>
-
-            <p>
-                सिनेमा, कलाकार आणि
-                मनोरंजन विश्वातील ताजे अपडेट्स.
-            </p>
-
-        </div>
-
-
-        <div class="category-card">
-
-            <h3>विशेष</h3>
-
-            <p>
-                गंगा अटलचे विशेष रिपोर्ट,
-                विश्लेषण आणि महत्त्वाच्या कथा.
-            </p>
-
-        </div>
-
-
+    <div class="no-result" id="noResult">
+        🔎 तुमच्या शोधासाठी कोणतीही बातमी सापडली नाही.
     </div>
 
-</section>
+
+    <!-- =========================
+         MAHARASHTRA
+    ========================= -->
+
+    <section class="category-section"
+             id="maharashtra">
+
+        <div class="category-header">
+
+            <h2>महाराष्ट्र</h2>
+
+            <a href="#latest"
+               class="more">
+                आणखी वाचा →
+            </a>
+
+        </div>
+
+        <div class="news-grid">
+
+            <article class="news-card searchable">
+
+                <img src="logo-4.jpg"
+                     alt="महाराष्ट्र">
+
+                <div class="news-card-content">
+
+                    <span class="category">
+                        महाराष्ट्र
+                    </span>
+
+                    <h3>
+                        महाराष्ट्रातील जिल्हानिहाय महत्त्वाच्या बातम्या
+                    </h3>
+
+                    <p>
+                        राज्यातील स्थानिक आणि महत्त्वाच्या घडामोडी.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="news-card searchable">
+
+                <img src="logo-4.jpg"
+                     alt="स्थानिक बातम्या">
+
+                <div class="news-card-content">
+
+                    <span class="category">
+                        स्थानिक
+                    </span>
+
+                    <h3>
+                        आपल्या परिसरातील ताज्या घडामोडी
+                    </h3>
+
+                    <p>
+                        स्थानिक बातम्यांचे ताजे अपडेट.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="news-card searchable">
+
+                <img src="logo-4.jpg"
+                     alt="महाराष्ट्र अपडेट">
+
+                <div class="news-card-content">
+
+                    <span class="category">
+                        अपडेट
+                    </span>
+
+                    <h3>
+                        राज्यातील महत्त्वाच्या घडामोडी
+                    </h3>
+
+                    <p>
+                        महाराष्ट्रातील ताज्या बातम्या.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         DESH
+    ========================= -->
+
+    <section class="category-section"
+             id="desh">
+
+        <div class="category-header">
+
+            <h2>देश</h2>
+
+            <a href="#latest"
+               class="more">
+                आणखी वाचा →
+            </a>
+
+        </div>
+
+        <div class="news-grid">
+
+            <article class="news-card searchable">
+
+                <img src="logo-4.jpg"
+                     alt="देश">
+
+                <div class="news-card-content">
+
+                    <span class="category">
+                        देश
+                    </span>
+
+                    <h3>
+                        देशभरातील आजच्या महत्त्वाच्या बातम्या
+                    </h3>
+
+                    <p>
+                        राष्ट्रीय पातळीवरील ताज्या घडामोडी.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="news-card searchable">
+
+                <img src="logo-4.jpg"
+                     alt="राष्ट्रीय बातमी">
+
+                <div class="news-card-content">
+
+                    <span class="category">
+                        राष्ट्रीय
+                    </span>
+
+                    <h3>
+                        देशातील महत्त्वाचे निर्णय आणि अपडेट
+                    </h3>
+
+                    <p>
+                        देशभरातील ताज्या बातम्या.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="news-card searchable">
+
+                <img src="logo-4.jpg"
+                     alt="भारत बातमी">
+
+                <div class="news-card-content">
+
+                    <span class="category">
+                        भारत
+                    </span>
+
+                    <h3>
+                        भारतातील ताज्या घडामोडी
+                    </h3>
+
+                    <p>
+                        देशातील महत्त्वाच्या बातम्या.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         RAJKARAN
+    ========================= -->
+
+    <section class="category-section"
+             id="rajkaran">
+
+        <div class="category-header">
+
+            <h2>राजकारण</h2>
+
+            <a href="#latest"
+               class="more">
+                आणखी वाचा →
+            </a>
+
+        </div>
+
+        <div class="news-grid">
+
+            <article class="news-card searchable">
+
+                <img src="logo-4.jpg"
+                     alt="राजकारण">
+
+                <div class="news-card-content">
+
+                    <span class="category">
+                        राजकारण
+                    </span>
+
+                    <h3>
+                        राज्यातील राजकीय घडामोडींचे ताजे अपडेट
+                    </h3>
+
+                    <p>
+                        राजकीय क्षेत्रातील महत्त्वाच्या बातम्या.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="news-card searchable">
+
+                <img src="logo-4.jpg"
+                     alt="राजकीय बातमी">
+
+                <div class="news-card-content">
+
+                    <span class="category">
+                        राजकीय अपडेट
+                    </span>
+
+                    <h3>
+                        राजकीय नेत्यांच्या महत्त्वाच्या घडामोडी
+                    </h3>
+
+                    <p>
+                        राजकारणातील ताज्या घडामोडी.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="news-card searchable">
+
+                <img src="logo-4.jpg"
+                     alt="राजकीय न्यूज">
+
+                <div class="news-card-content">
+
+                    <span class="category">
+                        न्यूज
+                    </span>
+
+                    <h3>
+                        आजच्या राजकारणातील प्रमुख बातम्या
+                    </h3>
+
+                    <p>
+                        ताज्या राजकीय बातम्या येथे वाचा.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         KRIDA
+    ========================= -->
+
+    <section class="category-section"
+             id="krida">
+
+        <div class="category-header">
+
+            <h2>क्रीडा</h2>
+
+            <a href="#latest"
+               class="more">
+                आणखी वाचा →
+            </a>
+
+        </div>
+
+        <div class="news-grid">
+
+            <article class="news-card searchable">
+
+                <img src="logo-4.jpg"
+                     alt="क्रीडा">
+
+                <div class="news-card-content">
+
+                    <span class="category">
+                        क्रीडा
+                    </span>
+
+                    <h3>
+                        क्रीडा विश्वातील आजच्या ताज्या बातम्या
+                    </h3>
+
+                    <p>
+                        विविध खेळांमधील ताजे अपडेट.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="news-card searchable">
+
+                <img src="logo-4.jpg"
+                     alt="क्रिकेट">
+
+                <div class="news-card-content">
+
+                    <span class="category">
+                        क्रिकेट
+                    </span>
+
+                    <h3>
+                        क्रिकेट विश्वातील महत्त्वाच्या घडामोडी
+                    </h3>
+
+                    <p>
+                        क्रिकेटच्या ताज्या बातम्या.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="news-card searchable">
+
+                <img src="logo-4.jpg"
+                     alt="खेळ">
+
+                <div class="news-card-content">
+
+                    <span class="category">
+                        स्पोर्ट्स
+                    </span>
+
+                    <h3>
+                        खेळाडू आणि सामन्यांचे ताजे अपडेट
+                    </h3>
+
+                    <p>
+                        क्रीडा विश्वातील बातम्या.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ENTERTAINMENT
+    ========================= -->
+
+    <section class="category-section"
+             id="manoranjan">
+
+        <div class="category-header">
+
+            <h2>मनोरंजन</h2>
+
+            <a href="#latest"
+               class="more">
+                आणखी वाचा →
+            </a>
+
+        </div>
+
+        <div class="news-grid">
+
+            <article class="news-card searchable">
+
+                <img src="logo-4.jpg"
+                     alt="मनोरंजन">
+
+                <div class="news-card-content">
+
+                    <span class="category">
+                        मनोरंजन
+                    </span>
+
+                    <h3>
+                        मनोरंजन विश्वातील ताज्या बातम्या
+                    </h3>
+
+                    <p>
+                        सिनेमा आणि मनोरंजन क्षेत्रातील अपडेट.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="news-card searchable">
+
+                <img src="logo-4.jpg"
+                     alt="सिनेमा">
+
+                <div class="news-card-content">
+
+                    <span class="category">
+                        सिनेमा
+                    </span>
+
+                    <h3>
+                        चित्रपट विश्वातील नवीन अपडेट
+                    </h3>
+
+                    <p>
+                        चित्रपट आणि कलाकारांच्या बातम्या.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="news-card searchable">
+
+                <img src="logo-4.jpg"
+                     alt="बॉलीवूड">
+
+                <div class="news-card-content">
+
+                    <span class="category">
+                        मनोरंजन
+                    </span>
+
+                    <h3>
+                        कलाकार आणि मनोरंजन विश्वातील बातम्या
+                    </h3>
+
+                    <p>
+                        मनोरंजन क्षेत्रातील ताज्या घडामोडी.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         E PAPER
+    ========================= -->
+
+    <section id="epaper">
+
+        <div class="epaper">
+
+            <div>
+
+                <h2>
+                    📰 आजचा ई-पेपर
+                </h2>
+
+                <p>
+                    आजचे वर्तमानपत्र PDF स्वरूपात वाचण्यासाठी
+                    खालील बटण वापरा.
+                </p>
+
+            </div>
+
+            <button
+                class="red-button"
+                onclick="openEpaper()">
+                ई-पेपर वाचा
+            </button>
+
+        </div>
+
+    </section>
 
 
 </main>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
     <div class="footer-inner">
 
+        <div class="footer-logo">
+            गंगा अटल
+        </div>
 
-        <div>
+        <div class="footer-tagline">
+            सत्य धारा, अटल निष्पक्ष
+        </div>
 
-            <h2>
-                गंगा अटल
-            </h2>
+        <div class="footer-links">
 
-            <p>
-                सत्य धारा, अटल निष्पक्ष
-            </p>
+            <a href="#home">मुखपृष्ठ</a>
 
-            <br>
+            <a href="#maharashtra">महाराष्ट्र</a>
 
-            <p>
-                विश्वासार्ह बातम्या आणि
-                स्थानिक घडामोडी आपल्या वाचकांपर्यंत
-                पोहोचवण्याचा आमचा प्रयत्न.
-            </p>
+            <a href="#desh">देश</a>
+
+            <a href="#rajkaran">राजकारण</a>
+
+            <a href="#krida">क्रीडा</a>
+
+            <a href="#manoranjan">मनोरंजन</a>
 
         </div>
 
-
-        <div>
-
-            <h3>
-                महत्त्वाचे विभाग
-            </h3>
-
-            <ul>
-
-                <li>मुखपृष्ठ</li>
-                <li>महाराष्ट्र</li>
-                <li>देश</li>
-                <li>राजकारण</li>
-                <li>क्रीडा</li>
-
-            </ul>
-
+        <div class="copyright">
+            © 2026 गंगा अटल. सर्व हक्क राखीव.
         </div>
-
-
-        <div>
-
-            <h3>
-                संपर्क
-            </h3>
-
-            <ul>
-
-                <li>आमच्याबद्दल</li>
-                <li>संपर्क साधा</li>
-                <li>जाहिरात</li>
-                <li>गोपनीयता धोरण</li>
-
-            </ul>
-
-        </div>
-
-
-    </div>
-
-
-    <div class="copyright">
-
-        © 2026 गंगा अटल • सर्व हक्क राखीव
 
     </div>
 
@@ -1210,73 +1598,234 @@ footer li{
 
 <script>
 
-/* DARK MODE */
+/* =========================
+   DARK MODE
+========================= */
 
 function toggleDarkMode(){
 
-    document.body.classList.toggle("dark-mode");
+    document.body.classList.toggle("dark");
+
+    const btn =
+        document.getElementById("darkModeBtn");
+
+    if(document.body.classList.contains("dark")){
+
+        btn.innerHTML = "☀️ Light Mode";
+
+        localStorage.setItem(
+            "darkMode",
+            "on"
+        );
+
+    }else{
+
+        btn.innerHTML = "🌙 Dark Mode";
+
+        localStorage.setItem(
+            "darkMode",
+            "off"
+        );
+
+    }
 
 }
 
 
-/* SEARCH */
+/* Remember Dark Mode */
+
+if(localStorage.getItem("darkMode")==="on"){
+
+    document.body.classList.add("dark");
+
+    document.getElementById(
+        "darkModeBtn"
+    ).innerHTML = "☀️ Light Mode";
+
+}
+
+
+/* =========================
+   SEARCH
+========================= */
 
 function searchNews(){
 
     const input =
-        document
-        .getElementById("searchInput")
-        .value
-        .toLowerCase();
+        document.getElementById(
+            "searchInput"
+        );
 
-    const items =
-        document
-        .querySelectorAll(".news-item");
+    const keyword =
+        input.value.toLowerCase().trim();
 
-    items.forEach(function(item){
+    const cards =
+        document.querySelectorAll(
+            ".searchable"
+        );
+
+    let found = 0;
+
+    cards.forEach(function(card){
 
         const text =
-            item.innerText.toLowerCase();
+            card.innerText.toLowerCase();
 
-        if(text.includes(input)){
-            item.style.display="grid";
+        if(
+            keyword === "" ||
+            text.includes(keyword)
+        ){
+
+            card.style.display = "";
+
+            found++;
+
         }else{
-            item.style.display="none";
+
+            card.style.display = "none";
+
         }
 
     });
 
+    const noResult =
+        document.getElementById(
+            "noResult"
+        );
+
+    if(
+        keyword !== "" &&
+        found === 0
+    ){
+
+        noResult.style.display =
+            "block";
+
+    }else{
+
+        noResult.style.display =
+            "none";
+
+    }
+
 }
 
 
-/* EPAPER */
+/* =========================
+   LANGUAGE
+========================= */
+
+function setLanguage(language){
+
+    const marathiBtn =
+        document.getElementById(
+            "marathiBtn"
+        );
+
+    const hindiBtn =
+        document.getElementById(
+            "hindiBtn"
+        );
+
+    const englishBtn =
+        document.getElementById(
+            "englishBtn"
+        );
+
+    marathiBtn.classList.remove("active");
+    hindiBtn.classList.remove("active");
+    englishBtn.classList.remove("active");
+
+
+    if(language==="mr"){
+
+        marathiBtn.classList.add("active");
+
+        document.documentElement.lang =
+            "mr";
+
+        document.getElementById(
+            "breakingText"
+        ).innerText =
+            "गंगा अटलवर वाचा महाराष्ट्रातील आणि देशातील ताज्या घडामोडी";
+
+    }
+
+
+    if(language==="hi"){
+
+        hindiBtn.classList.add("active");
+
+        document.documentElement.lang =
+            "hi";
+
+        document.getElementById(
+            "breakingText"
+        ).innerText =
+            "गंगा अटल पर पढ़ें महाराष्ट्र और देश की ताजा खबरें";
+
+    }
+
+
+    if(language==="en"){
+
+        englishBtn.classList.add("active");
+
+        document.documentElement.lang =
+            "en";
+
+        document.getElementById(
+            "breakingText"
+        ).innerText =
+            "Read the latest news from Maharashtra and India on Ganga Atal";
+
+    }
+
+}
+
+
+/* =========================
+   E-PAPER
+========================= */
 
 function openEpaper(){
 
     alert(
-        "ई-पेपरची PDF लिंक अजून जोडलेली नाही. PDF उपलब्ध झाल्यावर येथे लिंक जोडा."
+        "ई-पेपर PDF ची लिंक अजून जोडलेली नाही. PDF उपलब्ध झाल्यावर येथे लिंक जोडता येईल."
     );
 
 }
 
 
-/* LANGUAGE BUTTON */
+/* =========================
+   SMOOTH SCROLL
+========================= */
 
-document
-.querySelectorAll(".languages button")
-.forEach(function(button){
+document.querySelectorAll(
+    'a[href^="#"]'
+).forEach(function(link){
 
-    button.addEventListener("click",function(){
+    link.addEventListener(
+        "click",
+        function(event){
 
-        document
-        .querySelectorAll(".languages button")
-        .forEach(function(btn){
-            btn.classList.remove("active");
-        });
+            const target =
+                document.querySelector(
+                    this.getAttribute("href")
+                );
 
-        this.classList.add("active");
+            if(target){
 
-    });
+                event.preventDefault();
+
+                target.scrollIntoView({
+                    behavior:"smooth"
+                });
+
+            }
+
+        }
+    );
 
 });
 
