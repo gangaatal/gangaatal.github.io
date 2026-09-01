@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>गंगा अटल | सत्य धारा, अटल निष्पक्ष</title>
+<meta name="description" content="गंगा अटल - अकोला, खंडवा, महाराष्ट्र आणि देशातील ताज्या बातम्या">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;background:#f2f4f7;color:#111827;line-height:1.6}
+a{text-decoration:none;color:inherit}.container{width:min(1160px,94%);margin:auto}
+.topbar{background:#101827;color:#fff;padding:8px 0;font-size:14px;font-weight:800}
+.topbar .container{display:flex;justify-content:space-between;gap:15px}
+header{background:#fff}.head{min-height:145px;display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+.logo{width:370px;max-width:55%;height:auto;object-fit:contain}.actions{display:flex;flex-direction:column;align-items:flex-end;gap:14px}
+.langs{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid #cbd5e1;background:#fff;border-radius:8px;padding:9px 15px;font-weight:900;cursor:pointer}
+.btn.active,.btn.red{background:#ed1c24;color:#fff;border-color:#ed1c24}
+.nav{background:#101827;border-bottom:3px solid #ed1c24}.navin{display:flex;overflow-x:auto;scrollbar-width:none}
+.navin::-webkit-scrollbar{display:none}.nav a{color:#fff;font-weight:900;font-size:17px;padding:16px 18px;white-space:nowrap}
+.nav a:hover,.nav a.active{background:#ed1c24}
+.break{margin:20px 0 14px;background:#fff;border-radius:10px;display:flex;overflow:hidden}
+.break b{background:#ed1c24;color:#fff;padding:12px 20px;white-space:nowrap}.break span{padding:12px 20px;font-weight:800}
+.search{display:flex;gap:10px;margin-bottom:20px}.search input{flex:1;padding:14px;border:1px solid #d5dbe5;border-radius:8px;font-size:16px}
+.search button{border:0;background:#ed1c24;color:#fff;border-radius:8px;padding:0 25px;font-weight:900;cursor:pointer}
+.grid{display:grid;grid-template-columns:2fr 1fr;gap:18px}.card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 4px 18px #0000000d;margin-bottom:18px}
+.title{border-left:6px solid #ed1c24;padding-left:12px;font-size:25px;font-weight:900;margin-bottom:18px}
+.hero{position:relative;overflow:hidden;border-radius:12px;min-height:400px;background:#ddd}.hero img{width:100%;height:400px;object-fit:cover}
+.overlay{position:absolute;inset:auto 0 0;padding:60px 25px 22px;color:#fff;background:linear-gradient(transparent,#000d)}
+.badge{background:#ed1c24;padding:4px 10px;border-radius:5px;font-weight:900}.overlay h1{font-size:30px}
+.side{background:#172033;color:#fff;border-radius:12px;padding:22px;margin-bottom:18px}.side h2{font-size:24px;border-left:6px solid #ed1c24;padding-left:10px}
+.side p{margin-top:8px}.side a{display:inline-block;margin-top:15px;background:#ed1c24;padding:10px 18px;border-radius:7px;font-weight:900}
+.section{margin:28px 0}.secthead{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #ed1c24;padding-bottom:8px;margin-bottom:14px}
+.secthead h2{font-size:27px}.more{color:#ed1c24;font-weight:900}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.news{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 3px 12px #0000000b}.news img{width:100%;height:165px;object-fit:cover}
+.news div{padding:13px}.news h3{font-size:18px;line-height:1.4}.small{font-size:13px;color:#64748b;margin-top:5px}
+.read{display:inline-block;margin-top:10px;background:#ed1c24;color:#fff;padding:7px 12px;border-radius:6px;font-weight:900;border:0;cursor:pointer}
+footer{margin-top:35px;background:#101827;color:#fff;padding:35px 0 20px}.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:25px}
+.foot h3{margin-bottom:8px}.foot ul{list-style:none}.foot li{margin:5px 0;color:#cbd5e1}.copy{text-align:center;border-top:1px solid #334155;margin-top:25px;padding-top:15px;color:#94a3b8}
+body.dark{background:#0b1220;color:#f5f7fa}body.dark header,body.dark .card,body.dark .news,body.dark .break{background:#111827;color:#fff}
+body.dark .btn{background:#111827;color:#fff;border-color:#64748b}body.dark .search input{background:#111827;color:#fff;border-color:#334155}
+body.dark .small{color:#aab6c8}
+.modal{display:none;position:fixed;z-index:99;inset:0;background:#000b;overflow:auto;padding:30px 15px}
+.modalbox{background:#fff;color:#111827;max-width:900px;margin:20px auto;border-radius:14px;overflow:hidden;box-shadow:0 20px 60px #0008}
+body.dark .modalbox{background:#111827;color:#fff}.modalbox img{width:100%;max-height:430px;object-fit:cover}
+.modalbody{padding:25px}.close{float:right;background:#ed1c24;color:#fff;border:0;border-radius:7px;padding:8px 13px;font-weight:900;cursor:pointer}
+.modalbody h1{font-size:32px;line-height:1.3;margin:12px 0}.meta{color:#64748b;margin-bottom:16px}.article p{font-size:18px;margin:12px 0}.source{margin-top:18px;padding:12px;background:#f1f5f9;border-radius:8px}
+body.dark .source{background:#1e293b}.source a{color:#ed1c24;font-weight:900}
+.noresult{background:#fff;padding:25px;border-radius:10px;margin:15px 0;display:none}
+@media(max-width:850px){.head{flex-direction:column;gap:20px}.logo{max-width:85%}.actions{align-items:center}.grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.foot{grid-template-columns:1fr}}
+@media(max-width:520px){.topbar .container{font-size:11px;flex-direction:column}.nav a{font-size:15px;padding:13px 14px}.break{flex-direction:column}.break b,.break span{padding:10px 12px;font-size:13px}.search{flex-direction:column}.search button{padding:12px}.cards{grid-template-columns:1fr}.hero img{height:300px}.overlay h1{font-size:22px}.modalbody h1{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="container"><span id="tag1">गंगा अटल • सत्य धारा, अटल निष्पक्ष</span><span id="tag2">विश्वसनीय बातम्या • स्थानिक घडामोडी</span></div></div>
+<header><div class="container head">
+<img src="logo-4.jpg" alt="गंगा अटल" class="logo">
+<div class="actions">
+<div class="langs">
+<button class="btn active" data-lang="mr" onclick="setLang('mr')">मराठी</button>
+<button class="btn" data-lang="hi" onclick="setLang('hi')">हिंदी</button>
+<button class="btn" data-lang="en" onclick="setLang('en')">English</button>
+</div>
+<button class="btn red" id="themeBtn" onclick="toggleDark()">🌙 Dark Mode</button>
+</div></div></header>
+
+<nav class="nav"><div class="container navin" id="nav"></div></nav>
+<main id="home" class="container">
+<div class="break"><b id="breakingLabel">🔴 ब्रेकिंग न्यूज</b><span id="breakingText"></span></div>
+<form class="search" onsubmit="searchNews(event)"><input id="q" type="search" placeholder="बातमी शोधा..." autocomplete="off"><button id="searchBtn" type="submit">🔎 शोधा</button></form>
+<div id="noresult" class="noresult"></div>
+
+<div class="grid">
+<section class="card"><div class="title" id="latestTitle"></div>
+<div class="hero"><img id="heroImg" src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80" alt="">
+<div class="overlay"><span class="badge" id="heroBadge"></span><h1 id="heroTitle"></h1><button class="read" id="heroRead" onclick="openArticle(0)"></button></div></div></section>
+<aside>
+<div class="side" id="epaper"><h2 id="epTitle">📰 आजचा ई-पेपर</h2><p id="epText">आजचे वर्तमानपत्र PDF स्वरूपात वाचा.</p><a id="epLink" href="#" onclick="openEpaper(event)">ई-पेपर वाचा</a></div>
+<div class="card"><div class="title" id="popularTitle"></div><p id="popularText"></p></div>
+</aside></div>
+
+<div id="sections"></div>
+</main>
+
+<footer><div class="container foot">
+<div><h3>गंगा अटल</h3><p id="footTag"></p><p id="footDesc"></p></div>
+<div><h3 id="footSections"></h3><ul id="footList1"></ul></div>
+<div><h3 id="footOther"></h3><ul id="footList2"></ul></div>
+</div><div class="container copy">© 2026 गंगा अटल • सर्व हक्क राखीव</div></footer>
+
+<div class="modal" id="articleModal" onclick="closeArticle(event)">
+<div class="modalbox" onclick="event.stopPropagation()"><img id="modalImg" src="" alt="">
+<div class="modalbody"><button class="close" onclick="closeArticle()">✕</button><h1 id="modalTitle"></h1><div class="meta" id="modalMeta"></div><div class="article" id="modalText"></div><div class="source" id="modalSource"></div></div></div></div>
+
+<script>
+/*
+  IMPORTANT:
+  1) This is a static website. News below is manually seeded from current published reports.
+  2) For your OWN real E-Paper, replace EPAPER_URL below with the direct PDF URL.
+     Do not use another newspaper's PDF as your own.
+*/
+const EPAPER_URL = ""; // Example: "epaper.pdf" if you upload epaper.pdf into this repository.
+
+const T={
+mr:{
+tag1:"गंगा अटल • सत्य धारा, अटल निष्पक्ष",tag2:"विश्वसनीय बातम्या • स्थानिक घडामोडी",
+nav:["मुखपृष्ठ","अकोला","खंडवा","महाराष्ट्र","देश","राजकारण","क्रीडा","मनोरंजन","ई-पेपर"],
+breaking:"🔴 ब्रेकिंग न्यूज",breakText:"गंगा अटलवर वाचा महाराष्ट्र आणि देशातील ताज्या घडामोडी",
+search:"बातमी शोधा...",searchBtn:"🔎 शोधा",latest:"ताज्या बातम्या",badge:"ताज्या बातम्या",read:"पूर्ण बातमी वाचा →",
+epTitle:"📰 आजचा ई-पेपर",epText:"आजचे वर्तमानपत्र PDF स्वरूपात वाचा.",epBtn:"ई-पेपर वाचा",
+popular:"लोकप्रिय बातम्या",popularText:"महाराष्ट्र, अकोला, खंडवा आणि देशातील महत्त्वाच्या अपडेट्स येथे वाचा.",
+more:"आणखी वाचा →",sections:"विभाग",other:"इतर",tag:"सत्य धारा, अटल निष्पक्ष",desc:"महाराष्ट्र, अकोला, खंडवा आणि देशातील ताज्या घडामोडी.",
+notfound:"ही बातमी सापडली नाही.",source:"मूळ स्रोत / संदर्भ:",epMissing:"तुमची खरी E-Paper PDF लिंक अजून जोडलेली नाही. GitHub मध्ये PDF upload करून EPAPER_URL मध्ये तिचे नाव/लिंक द्या."
+},
+hi:{
+tag1:"गंगा अटल • सत्य धारा, अटल निष्पक्ष",tag2:"विश्वसनीय खबरें • स्थानीय घटनाक्रम",
+nav:["होम","अकोला","खंडवा","महाराष्ट्र","भारत","राजनीति","खेल","मनोरंजन","ई-पेपर"],
+breaking:"🔴 ब्रेकिंग न्यूज़",breakText:"गंगा अटल पर पढ़ें महाराष्ट्र और देश की ताज़ा खबरें",
+search:"खबर खोजें...",searchBtn:"🔎 खोजें",latest:"ताज़ा खबरें",badge:"ताज़ा खबर",read:"पूरी खबर पढ़ें →",
+epTitle:"📰 आज का ई-पेपर",epText:"आज का समाचार पत्र PDF रूप में पढ़ें।",epBtn:"ई-पेपर पढ़ें",
+popular:"लोकप्रिय खबरें",popularText:"महाराष्ट्र, अकोला, खंडवा और देश के महत्वपूर्ण अपडेट्स यहां पढ़ें।",
+more:"और पढ़ें →",sections:"विभाग",other:"अन्य",tag:"सत्य धारा, अटल निष्पक्ष",desc:"महाराष्ट्र, अकोला, खंडवा और देश की ताज़ा खबरें।",
+notfound:"यह खबर नहीं मिली।",source:"मूल स्रोत / संदर्भ:",epMissing:"आपकी वास्तविक E-Paper PDF लिंक अभी नहीं जोड़ी गई है। GitHub में PDF अपलोड करके EPAPER_URL में उसका नाम/लिंक डालें।"
+},
+en:{
+tag1:"Ganga Atal • Truthful & Unbiased",tag2:"Trusted News • Local Updates",
+nav:["Home","Akola","Khandwa","Maharashtra","India","Politics","Sports","Entertainment","E-Paper"],
+breaking:"🔴 Breaking News",breakText:"Read the latest updates from Maharashtra and across India on Ganga Atal",
+search:"Search news...",searchBtn:"🔎 Search",latest:"Latest News",badge:"Latest News",read:"Read Full Article →",
+epTitle:"📰 Today's E-Paper",epText:"Read today's newspaper in PDF format.",epBtn:"Read E-Paper",
+popular:"Popular News",popularText:"Read important updates from Maharashtra, Akola, Khandwa and across India here.",
+more:"Read more →",sections:"Sections",other:"Other",tag:"Truthful & Unbiased",desc:"Latest updates from Maharashtra, Akola, Khandwa and India.",
+notfound:"No matching news found.",source:"Original source / reference:",epMissing:"Your real E-Paper PDF link has not been added yet. Upload the PDF to GitHub and put its filename/link in EPAPER_URL."
+}
+};
+
+const news=[
+{
+cat:"maharashtra",date:"02 Sep 2026",
+img:"https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80",
+mr:{title:"महाराष्ट्रात सप्टेंबरच्या पावसाबाबत हवामान विभागाचा इशारा",text:"हवामान विभागाच्या ताज्या अंदाजानुसार सप्टेंबरमध्ये महाराष्ट्रात पावसाची कमतरता राहण्याची शक्यता आहे. ऑगस्टमधील कमी पावसानंतर या अंदाजामुळे शेती आणि जलसाठ्यांबाबत चिंता वाढली आहे."},
+hi:{title:"महाराष्ट्र में सितंबर की बारिश को लेकर मौसम विभाग का अनुमान",text:"मौसम विभाग के ताज़ा अनुमान के अनुसार सितंबर में महाराष्ट्र में बारिश सामान्य से कम रह सकती है। अगस्त में कम बारिश के बाद इस अनुमान से खेती और जलस्रोतों को लेकर चिंता बढ़ी है।"},
+en:{title:"Maharashtra faces risk of below-normal September rainfall",text:"The latest weather outlook indicates that Maharashtra could receive below-normal rainfall in September. After a weak August, the forecast raises concerns for agriculture and water resources."},
+source:"Reuters / Maharashtra Times"
+},
+{
+cat:"akola",date:"02 Sep 2026",
+img:"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80",
+mr:{title:"अकोला विभागासाठी स्थानिक बातम्यांचे स्वतंत्र अपडेट्स सुरू",text:"गंगा अटलच्या अकोला विभागात आता स्थानिक घडामोडी स्वतंत्रपणे प्रसिद्ध करता येतील. या विभागात प्रशासन, शिक्षण, शेती, बाजारपेठ आणि नागरिकांशी संबंधित बातम्यांना प्राधान्य दिले जाईल."},
+hi:{title:"अकोला विभाग के लिए स्थानीय खबरों का अलग सेक्शन",text:"गंगा अटल के अकोला सेक्शन में स्थानीय घटनाक्रम अलग से प्रकाशित किए जा सकेंगे। प्रशासन, शिक्षा, खेती, बाजार और नागरिकों से जुड़ी खबरों को प्राथमिकता दी जाएगी।"},
+en:{title:"Dedicated local-news section for Akola",text:"Ganga Atal now has a dedicated Akola section for local updates. The section is designed for administration, education, agriculture, markets and civic news."},
+source:"Ganga Atal site section update"
+},
+{
+cat:"khandwa",date:"30 Aug 2026",
+img:"https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80",
+mr:{title:"पॅन्ट्री कारमधील जेवणानंतर मुलांची प्रकृती बिघडली; खंडव्यात ट्रेन थांबवली",text:"पॅन्ट्री कारमधील अन्न खाल्ल्यानंतर काही मुलांची प्रकृती बिघडल्याची घटना समोर आली. ट्रेन खंडवा येथे सुमारे तासभर थांबवण्यात आली आणि वैद्यकीय पथकाने मुलांची तपासणी केली."},
+hi:{title:"पैंट्री कार का खाना खाने के बाद बच्चे बीमार; खंडवा में ट्रेन रोकी गई",text:"पैंट्री कार का खाना खाने के बाद कुछ बच्चों के बीमार पड़ने की घटना सामने आई। ट्रेन को खंडवा में करीब एक घंटे रोका गया और मेडिकल टीम ने बच्चों की जांच की।"},
+en:{title:"Children fall ill after pantry-car food; train halted at Khandwa",text:"Several children reportedly fell ill after eating pantry-car food. The train was halted at Khandwa for about an hour while a medical team examined the children."},
+source:"Navbharat Times"
+},
+{
+cat:"desh",date:"01 Sep 2026",
+img:"https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=80",
+mr:{title:"भारताच्या अर्थव्यवस्थेबाबत 7.8% जून तिमाही वाढीचा उल्लेख",text:"बिझनेस स्टँडर्डच्या वृत्तानुसार जून तिमाहीत भारताच्या GDP वाढीचा दर 7.8% असल्याचे नमूद करण्यात आले. जागतिक अस्थिरतेच्या पार्श्वभूमीवर देशांतर्गत अर्थव्यवस्थेवर भर देण्याचे आवाहन करण्यात आले."},
+hi:{title:"भारत की अर्थव्यवस्था: जून तिमाही में 7.8% वृद्धि का उल्लेख",text:"बिजनेस स्टैंडर्ड के अनुसार जून तिमाही में भारत की GDP वृद्धि 7.8% रही। वैश्विक अस्थिरता के बीच घरेलू आर्थिक गतिविधियों और आत्मनिर्भरता पर जोर दिया गया।"},
+en:{title:"India's June-quarter GDP growth cited at 7.8%",text:"Business Standard reported June-quarter GDP growth of 7.8%. The report highlighted the focus on domestic economic activity and self-reliance amid global uncertainty."},
+source:"Business Standard"
+},
+{
+cat:"rajkaran",date:"01 Sep 2026",
+img:"https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1200&q=80",
+mr:{title:"महाराष्ट्राच्या राजकारणातील महत्त्वाच्या घडामोडींवर लक्ष",text:"महाराष्ट्रातील राजकीय हालचालींमध्ये मंत्रिमंडळ बैठक, नेत्यांचे दिल्ली दौरे आणि आगामी न्यायालयीन सुनावण्यांमुळे वातावरण चर्चेत आहे. या विभागात पडताळलेल्या राजकीय अपडेट्स स्वतंत्रपणे दिले जातील."},
+hi:{title:"महाराष्ट्र की राजनीति में अहम गतिविधियों पर नजर",text:"महाराष्ट्र की राजनीति में कैबिनेट बैठक, नेताओं के दिल्ली दौरे और आगामी कानूनी सुनवाइयों को लेकर गतिविधियां चर्चा में हैं। इस सेक्शन में सत्यापित राजनीतिक अपडेट अलग से दिए जाएंगे।"},
+en:{title:"Key political developments in Maharashtra",text:"Political activity in Maharashtra has drawn attention around cabinet proceedings, leaders' Delhi visits and upcoming legal hearings. This section will carry separately verified political updates."},
+source:"Times of India / Aaj Tak"
+},
+{
+cat:"krida",date:"30 Aug 2026",
+img:"https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1200&q=80",
+mr:{title:"क्रीडा विभागात राष्ट्रीय आणि आंतरराष्ट्रीय अपडेट्स",text:"गंगा अटलच्या क्रीडा विभागात क्रिकेट, फुटबॉल आणि इतर खेळांतील ताज्या घडामोडी स्वतंत्रपणे प्रसिद्ध केल्या जातील. प्रत्येक बातमीसोबत स्रोत आणि तारीख देण्यात येईल."},
+hi:{title:"खेल विभाग में राष्ट्रीय और अंतरराष्ट्रीय अपडेट्स",text:"गंगा अटल के खेल सेक्शन में क्रिकेट, फुटबॉल और अन्य खेलों की ताज़ा खबरें अलग से प्रकाशित की जाएंगी। हर खबर के साथ स्रोत और तारीख दी जाएगी।"},
+en:{title:"National and international updates in Sports",text:"Ganga Atal's Sports section will publish separate updates on cricket, football and other sports, with the source and date shown for each article."},
+source:"Ganga Atal site section update"
+},
+{
+cat:"manoranjan",date:"30 Aug 2026",
+img:"https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=80",
+mr:{title:"मनोरंजन विभागासाठी स्वतंत्र बातमी आणि लेख व्यवस्था",text:"चित्रपट, वेब सीरिज, कलाकार आणि मनोरंजन क्षेत्रातील घडामोडींसाठी स्वतंत्र विभाग तयार करण्यात आला आहे. बातम्यांसोबत स्रोत देण्याची व्यवस्था ठेवण्यात आली आहे."},
+hi:{title:"मनोरंजन के लिए अलग खबर और आर्टिकल सेक्शन",text:"फिल्म, वेब सीरीज, कलाकारों और मनोरंजन जगत की खबरों के लिए अलग सेक्शन तैयार किया गया है। खबरों के साथ स्रोत देने की व्यवस्था रखी गई है।"},
+en:{title:"Dedicated Entertainment news and article section",text:"A dedicated section is available for films, web series, artists and entertainment updates, with a source field for each published article."},
+source:"Ganga Atal site section update"
+}
+];
+
+const catNames={
+mr:{akola:"अकोला",khandwa:"खंडवा",maharashtra:"महाराष्ट्र",desh:"देश",rajkaran:"राजकारण",krida:"क्रीडा",manoranjan:"मनोरंजन"},
+hi:{akola:"अकोला",khandwa:"खंडवा",maharashtra:"महाराष्ट्र",desh:"भारत",rajkaran:"राजनीति",krida:"खेल",manoranjan:"मनोरंजन"},
+en:{akola:"Akola",khandwa:"Khandwa",maharashtra:"Maharashtra",desh:"India",rajkaran:"Politics",krida:"Sports",manoranjan:"Entertainment"}
+};
+let lang="mr";
+
+function setLang(l){
+ lang=l; document.documentElement.lang=l;
+ const t=T[l];
+ document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("active",b.dataset.lang===l));
+ document.getElementById("tag1").textContent=t.tag1;document.getElementById("tag2").textContent=t.tag2;
+ document.getElementById("breakingLabel").textContent=t.breaking;document.getElementById("breakingText").textContent=t.breakText;
+ document.getElementById("q").placeholder=t.search;document.getElementById("searchBtn").textContent=t.searchBtn;
+ document.getElementById("latestTitle").textContent=t.latest;document.getElementById("heroBadge").textContent=t.badge;document.getElementById("heroRead").textContent=t.read;
+ document.getElementById("epTitle").textContent=t.epTitle;document.getElementById("epText").textContent=t.epText;document.getElementById("epLink").textContent=t.epBtn;
+ document.getElementById("popularTitle").textContent=t.popular;document.getElementById("popularText").textContent=t.popularText;
+ document.getElementById("footTag").textContent=t.tag;document.getElementById("footDesc").textContent=t.desc;
+ document.getElementById("footSections").textContent=t.sections;document.getElementById("footOther").textContent=t.other;
+ renderNav();renderSections();renderHero();
+}
+function renderNav(){
+ const keys=["home","akola","khandwa","maharashtra","desh","rajkaran","krida","manoranjan","epaper"];
+ document.getElementById("nav").innerHTML=T[lang].nav.map((x,i)=>`<a href="#${keys[i]}" class="${i===0?"active":""}">${x}</a>`).join("");
+ const links=keys.slice(1,5).map((k,i)=>`<li><a href="#${k}">${T[lang].nav[i+1]}</a></li>`).join("");
+ const links2=keys.slice(5).map((k,i)=>`<li><a href="#${k}">${T[lang].nav[i+5]}</a></li>`).join("");
+ document.getElementById("footList1").innerHTML=links;document.getElementById("footList2").innerHTML=links2;
+}
+function renderHero(){
+ const n=news[0];document.getElementById("heroImg").src=n.img;document.getElementById("heroImg").alt=n[lang].title;document.getElementById("heroTitle").textContent=n[lang].title;
+}
+function renderSections(){
+ const order=["akola","khandwa","maharashtra","desh","rajkaran","krida","manoranjan"];
+ document.getElementById("sections").innerHTML=order.map(cat=>{
+  const arr=news.filter(n=>n.cat===cat);
+  let cards=arr.map((n,i)=>`<article class="news"><img src="${n.img}" alt="${n[lang].title}"><div><h3>${n[lang].title}</h3><p class="small">${catNames[lang][cat]} • ${n.date}</p><button class="read" onclick="openArticle(${news.indexOf(n)})">${T[lang].read}</button></div></article>`).join("");
+  if(arr.length===0) cards=`<article class="news"><div><h3>${catNames[lang][cat]}</h3><p>${T[lang].popularText}</p></div></article>`;
+  return `<section class="section" id="${cat}"><div class="secthead"><h2>${catNames[lang][cat]}</h2><a class="more" href="#${cat}">${T[lang].more}</a></div><div class="cards">${cards}</div></section>`;
+ }).join("");
+}
+function openArticle(i){
+ const n=news[i];document.getElementById("modalImg").src=n.img;document.getElementById("modalTitle").textContent=n[lang].title;
+ document.getElementById("modalMeta").textContent=`${n.date} • ${catNames[lang][n.cat]}`;
+ document.getElementById("modalText").innerHTML=`<p>${n[lang].text}</p><p><strong>${lang==="mr"?"टीप":lang==="hi"?"नोट":"Note"}:</strong> ${lang==="mr"?"ही माहिती उपलब्ध प्रकाशित स्रोतांवर आधारित संक्षिप्त रूपात दिली आहे. पूर्ण/मूळ वृत्तासाठी खालील स्रोत पहा.":lang==="hi"?"यह संक्षिप्त विवरण उपलब्ध प्रकाशित स्रोतों पर आधारित है। मूल रिपोर्ट के लिए नीचे दिए स्रोत को देखें।":"This is a concise summary based on the published source. See the source below for the original report."}</p>`;
+ document.getElementById("modalSource").innerHTML=`${T[lang].source} <strong>${n.source}</strong>`;
+ document.getElementById("articleModal").style.display="block";document.body.style.overflow="hidden";
+}
+function closeArticle(e){if(!e || e.target.id==="articleModal"){document.getElementById("articleModal").style.display="none";document.body.style.overflow="";}}
+function searchNews(e){
+ e.preventDefault();const q=document.getElementById("q").value.trim().toLowerCase();const box=document.getElementById("noresult");
+ if(!q){box.style.display="none";renderSections();return}
+ const hits=news.filter(n=>[n[lang].title,n[lang].text,n.cat].join(" ").toLowerCase().includes(q));
+ box.style.display="block";
+ box.textContent=hits.length?`${hits.length} ${lang==="en"?"matching article(s) found.":lang==="hi"?"मिलती-जुलती खबरें मिलीं।":"संबंधित बातम्या सापडल्या."}`:T[lang].notfound;
+ document.querySelectorAll(".section").forEach(s=>s.style.display="none");
+ hits.forEach(n=>{const el=document.getElementById(n.cat);if(el)el.style.display="block";});
+}
+function toggleDark(){document.body.classList.toggle("dark");document.getElementById("themeBtn").textContent=document.body.classList.contains("dark")?"☀️ Light Mode":"🌙 Dark Mode";}
+function openEpaper(e){
+ e.preventDefault();
+ if(EPAPER_URL){window.open(EPAPER_URL,"_blank");}
+ else alert(T[lang].epMissing);
+}
+setLang("mr");
+</script>
+</body>
+</html>
