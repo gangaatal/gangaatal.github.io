@@ -1,278 +1,1286 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="mr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>गंगा अटल | सत्य धारा, अटल निश्चय</title>
-<meta name="description" content="गंगा अटल - सत्य धारा, अटल निश्चय">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>गंगा अटल | सत्य धारा, अटल निष्पक्ष</title>
+
+<meta name="description"
+content="गंगा अटल - सत्य धारा, अटल निष्पक्ष. महाराष्ट्र, देश, राजकारण, क्रीडा आणि मनोरंजनातील ताज्या बातम्या.">
+
+<meta name="keywords"
+content="गंगा अटल, मराठी बातम्या, महाराष्ट्र न्यूज, ताज्या बातम्या, Marathi News">
+
 <style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 :root{
-  --red:#d71920;--red2:#b70f16;--dark:#111827;--dark2:#1f2937;
-  --text:#17202a;--muted:#6b7280;--bg:#f4f6f8;--card:#fff;--border:#e5e7eb;
-  --shadow:0 8px 24px rgba(17,24,39,.07);--radius:12px
+    --red:#e21b23;
+    --dark:#111827;
+    --dark2:#1f2937;
+    --light:#f4f6f8;
+    --white:#ffffff;
+    --text:#171717;
+    --muted:#6b7280;
+    --border:#e5e7eb;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,"Noto Sans Devanagari","Nirmala UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
-a{text-decoration:none;color:inherit}
-button,input,textarea,select{font:inherit}
-button{cursor:pointer}
-.header{background:#fff;border-bottom:3px solid var(--red);position:sticky;top:0;z-index:15;box-shadow:0 2px 12px rgba(0,0,0,.06)}
-.topline{background:var(--dark);color:#fff;font-size:12px}
-.topin,.head,.navin,.container,.foot{max-width:1180px;margin:auto}
-.topin{padding:7px 18px;display:flex;justify-content:space-between;gap:12px}
-.head{padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{height:72px;max-width:410px;object-fit:contain}
-.tagline{font-weight:800;font-size:15px;color:var(--red);margin-top:0}
-.headright{text-align:right}.date{font-size:13px;color:var(--muted);margin-bottom:7px}
-.lang button{border:1px solid #cfd4da;background:#fff;padding:6px 9px;border-radius:6px;margin-left:4px}
-.lang button.active{background:var(--red);color:#fff;border-color:var(--red)}
-.nav{background:var(--dark);color:#fff}
-.navin{display:flex;overflow:auto;white-space:nowrap}
-.nav a{padding:12px 15px;font-weight:700;font-size:14px;border-bottom:3px solid transparent}
-.nav a:hover{background:var(--dark2);border-bottom-color:var(--red)}
-.container{padding:15px 18px}
-.breaking{display:flex;background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:15px;box-shadow:var(--shadow)}
-.breaking strong{background:var(--red);color:#fff;padding:9px 13px;white-space:nowrap}
-.ticker{padding:9px 13px;white-space:nowrap;overflow:hidden}
-.hero{background:var(--dark);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);position:relative}
-.slides{display:flex;transition:transform .45s ease}
-.slide{min-width:100%;height:285px;position:relative;background:linear-gradient(135deg,#111827,#374151);display:flex;align-items:flex-end}
-.slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.72}
-.slide .overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.8),rgba(0,0,0,.05) 65%)}
-.slide .caption{position:relative;color:#fff;padding:28px;max-width:820px}
-.badge{display:inline-block;background:var(--red);padding:5px 9px;border-radius:5px;font-size:12px;font-weight:800;margin-bottom:8px}
-.slide h1{margin:0 0 7px;font-size:30px;line-height:1.25}
-.slide p{margin:0;color:#e5e7eb}
-.hero-controls{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;pointer-events:none}
-.hero-controls button{pointer-events:auto;border:0;background:rgba(0,0,0,.5);color:#fff;width:38px;height:48px;font-size:27px}
-.hero-dots{position:absolute;right:18px;bottom:14px}
-.hero-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#ddd;margin:0 3px;cursor:pointer}
-.hero-dot.on{background:var(--red)}
-.grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(280px,1fr);gap:18px;margin-top:18px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
-.sectiontitle{display:flex;align-items:center;gap:9px;border-left:5px solid var(--red);padding-left:10px;margin:0 0 12px;font-size:22px}
-.sectiontitle:after{content:"";height:1px;background:var(--border);flex:1}
-.story{padding:14px 0;border-bottom:1px solid var(--border)}
-.story:last-child{border-bottom:0}
-.story h3{margin:0 0 5px;font-size:20px;line-height:1.35}
-.story p{margin:0;color:#555;line-height:1.6}
-.meta{font-size:12px;color:#8a9199;margin-bottom:5px}
-.story img{width:100%;max-height:320px;object-fit:cover;border-radius:8px;margin:8px 0}
-.news-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
-.sidebox{margin-top:18px}
-.popular .story{display:flex;gap:10px;align-items:flex-start}
-.rank{min-width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-weight:800}
-.epaper{background:linear-gradient(135deg,#111827,#263244);color:#fff;border:0}
-.epaper .sectiontitle{color:#fff;border-left-color:var(--red)}
-.epaper .sectiontitle:after{background:#374151}
-.primary{background:var(--red);color:#fff;border:0;border-radius:7px;padding:10px 15px;font-weight:800}
-.primary:hover{background:var(--red2)}
-.adbox{margin-top:18px;background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);position:relative}
-.adslides{display:flex;transition:transform .45s}
-.adslide{min-width:100%;height:145px;display:flex;align-items:center;justify-content:center;position:relative;background:#eef1f4;overflow:hidden}
-.adslide img{width:100%;height:100%;object-fit:cover}
-.adtext{font-size:24px;font-weight:800;color:#4b5563;text-align:center;padding:20px}
-.adcontrols{position:absolute;left:0;right:0;top:50%;display:flex;justify-content:space-between;transform:translateY(-50%);pointer-events:none}
-.adcontrols button{pointer-events:auto;border:0;background:#0008;color:#fff;width:34px;height:42px}
-.dots{text-align:center;padding:6px;background:#fff}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#bbb;margin:0 3px;cursor:pointer}.dot.on{background:var(--red)}
-footer{background:var(--dark);color:#d1d5db;margin-top:30px}.foot{padding:25px 18px;text-align:center}.foot b{color:#fff;font-size:18px}
-.adminlink{display:inline-block;margin-top:10px;color:#fff;background:#374151;padding:7px 11px;border-radius:6px;font-size:12px}
-.modal{position:fixed;inset:0;background:#0009;display:none;align-items:center;justify-content:center;padding:15px;z-index:30}.modal.show{display:flex}
-.modalbox{background:#fff;width:min(920px,100%);max-height:92vh;overflow:auto;border-radius:12px;padding:20px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
-.close{float:right;border:0;background:#eee;border-radius:50%;width:32px;height:32px}
-.loginbox{max-width:430px;margin:auto}.field{margin:10px 0}.field label{display:block;font-weight:700;margin-bottom:5px}
-.field input,.field textarea,.field select{width:100%;padding:10px;border:1px solid #ccc;border-radius:6px}
-.tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:15px}.tab{border:1px solid #ccc;background:#fff;padding:8px 12px;border-radius:6px}.tab.active{background:#111827;color:#fff}
-.panel{display:none}.panel.active{display:block}.adminrow{display:flex;gap:8px;align-items:center;border-bottom:1px solid #ddd;padding:10px 0}.adminrow img{width:75px;height:48px;object-fit:cover;border-radius:4px}.adminrow .grow{flex:1}
-.danger{background:#333;color:#fff;border:0;padding:7px 10px;border-radius:5px}.small{font-size:12px;color:#666}
-@media(max-width:760px){
- .topin{display:none}.header{position:relative}.head{flex-direction:column;align-items:flex-start;padding:9px 14px}
- .headright{text-align:left}.logo{height:62px;max-width:100%}.tagline{font-size:13px}
- .nav a{padding:10px 12px;font-size:13px}.container{padding:12px}
- .slide{height:225px}.slide h1{font-size:22px}.slide .caption{padding:20px}
- .grid{grid-template-columns:1fr}.news-grid{grid-template-columns:1fr}.adslide{height:115px}.adtext{font-size:18px}
- .story h3{font-size:18px}.card{padding:14px}
+
+html{
+    scroll-behavior:smooth;
 }
+
+body{
+    font-family:
+    Arial,
+    "Noto Sans Devanagari",
+    "Nirmala UI",
+    sans-serif;
+    background:var(--light);
+    color:var(--text);
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input{
+    font:inherit;
+}
+
+/* TOP BAR */
+
+.topbar{
+    background:var(--dark);
+    color:white;
+    font-size:14px;
+}
+
+.topbar-inner{
+    max-width:1200px;
+    margin:auto;
+    padding:8px 18px;
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+}
+
+/* HEADER */
+
+.header{
+    background:white;
+}
+
+.header-inner{
+    max-width:1200px;
+    margin:auto;
+    min-height:125px;
+    padding:18px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.logo{
+    width:300px;
+    max-width:100%;
+    height:85px;
+    object-fit:contain;
+}
+
+.logo-text h1{
+    color:var(--red);
+    font-size:48px;
+    font-weight:900;
+    line-height:1;
+}
+
+.logo-text p{
+    margin-top:8px;
+    font-weight:bold;
+    color:#333;
+}
+
+/* LANGUAGE */
+
+.languages{
+    display:flex;
+    gap:8px;
+}
+
+.languages button{
+    border:1px solid #d1d5db;
+    background:white;
+    padding:8px 14px;
+    border-radius:7px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.languages button.active,
+.languages button:hover{
+    background:var(--red);
+    color:white;
+    border-color:var(--red);
+}
+
+/* NAVIGATION */
+
+.navbar{
+    background:var(--dark);
+    border-bottom:4px solid var(--red);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.nav-inner{
+    max-width:1200px;
+    margin:auto;
+    padding:0 18px;
+    display:flex;
+    align-items:center;
+    gap:5px;
+    overflow-x:auto;
+}
+
+.nav-inner a{
+    color:white;
+    padding:15px 18px;
+    white-space:nowrap;
+    font-weight:bold;
+    transition:.2s;
+}
+
+.nav-inner a:hover,
+.nav-inner a.active{
+    background:var(--red);
+}
+
+/* CONTAINER */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:18px;
+}
+
+/* BREAKING NEWS */
+
+.breaking{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    margin-bottom:18px;
+    box-shadow:0 3px 15px rgba(0,0,0,.06);
+}
+
+.breaking-title{
+    background:var(--red);
+    color:white;
+    padding:12px 20px;
+    font-weight:900;
+    white-space:nowrap;
+}
+
+.breaking-news{
+    padding:10px 18px;
+    font-weight:bold;
+    overflow:hidden;
+    white-space:nowrap;
+}
+
+.breaking-news span{
+    display:inline-block;
+    animation:ticker 18s linear infinite;
+}
+
+@keyframes ticker{
+    from{
+        transform:translateX(100%);
+    }
+    to{
+        transform:translateX(-100%);
+    }
+}
+
+/* GRID */
+
+.main-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:18px;
+}
+
+/* CARD */
+
+.card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 5px 18px rgba(0,0,0,.05);
+}
+
+.card-body{
+    padding:20px;
+}
+
+/* SECTION TITLE */
+
+.section-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:18px;
+    border-bottom:1px solid var(--border);
+    padding-bottom:10px;
+}
+
+.section-title:before{
+    content:"";
+    width:5px;
+    height:30px;
+    background:var(--red);
+    border-radius:5px;
+}
+
+.section-title h2{
+    font-size:25px;
+}
+
+/* HERO */
+
+.hero{
+    position:relative;
+    height:430px;
+    overflow:hidden;
+    background:
+    linear-gradient(
+        rgba(0,0,0,.1),
+        rgba(0,0,0,.75)
+    ),
+    url("logo-4.jpg") center/cover;
+}
+
+.hero-content{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    padding:28px;
+    color:white;
+}
+
+.category{
+    display:inline-block;
+    background:var(--red);
+    color:white;
+    padding:5px 10px;
+    border-radius:5px;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.hero h2{
+    font-size:34px;
+    line-height:1.25;
+    margin-bottom:8px;
+}
+
+.hero p{
+    opacity:.9;
+}
+
+/* NEWS LIST */
+
+.news-list{
+    display:grid;
+    gap:14px;
+}
+
+.news-item{
+    display:grid;
+    grid-template-columns:120px 1fr;
+    gap:15px;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--border);
+}
+
+.news-item:last-child{
+    border-bottom:0;
+}
+
+.news-image{
+    height:90px;
+    border-radius:8px;
+    background:
+    linear-gradient(135deg,#ddd,#aaa);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#555;
+    font-size:12px;
+}
+
+.news-item h3{
+    font-size:18px;
+    line-height:1.35;
+    margin-bottom:5px;
+}
+
+.date{
+    color:var(--muted);
+    font-size:13px;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    display:grid;
+    gap:18px;
+}
+
+.epaper{
+    background:linear-gradient(
+        135deg,
+        var(--dark),
+        var(--dark2)
+    );
+    color:white;
+    padding:25px;
+    border-radius:12px;
+}
+
+.epaper h2{
+    font-size:25px;
+    margin-bottom:10px;
+}
+
+.epaper p{
+    color:#e5e7eb;
+    margin-bottom:18px;
+}
+
+.btn{
+    display:inline-block;
+    background:var(--red);
+    color:white;
+    border:0;
+    border-radius:7px;
+    padding:11px 18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.btn:hover{
+    opacity:.9;
+}
+
+/* POPULAR */
+
+.popular{
+    padding:20px;
+}
+
+.popular-item{
+    display:flex;
+    gap:12px;
+    padding:13px 0;
+    border-bottom:1px solid var(--border);
+}
+
+.popular-item:last-child{
+    border-bottom:0;
+}
+
+.number{
+    min-width:32px;
+    height:32px;
+    background:var(--red);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    font-weight:bold;
+}
+
+.popular-item h3{
+    font-size:16px;
+    line-height:1.4;
+}
+
+/* CATEGORY GRID */
+
+.category-section{
+    margin-top:20px;
+}
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.category-card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:20px;
+    transition:.2s;
+}
+
+.category-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.category-card h3{
+    color:var(--red);
+    margin-bottom:10px;
+}
+
+/* SEARCH */
+
+.search-box{
+    display:flex;
+    gap:8px;
+    margin-bottom:20px;
+}
+
+.search-box input{
+    flex:1;
+    border:1px solid var(--border);
+    border-radius:7px;
+    padding:12px 15px;
+    outline:none;
+}
+
+.search-box input:focus{
+    border-color:var(--red);
+}
+
+/* FOOTER */
+
+footer{
+    background:var(--dark);
+    color:white;
+    margin-top:40px;
+}
+
+.footer-inner{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 18px;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:35px;
+}
+
+footer h2,
+footer h3{
+    margin-bottom:12px;
+}
+
+footer p{
+    color:#d1d5db;
+}
+
+footer ul{
+    list-style:none;
+}
+
+footer li{
+    padding:5px 0;
+    color:#d1d5db;
+}
+
+.copyright{
+    text-align:center;
+    border-top:1px solid #374151;
+    padding:15px;
+    color:#cbd5e1;
+}
+
+/* DARK MODE */
+
+.dark-mode{
+    --light:#0b1120;
+    --white:#111827;
+    --text:#f3f4f6;
+    --border:#374151;
+    --muted:#9ca3af;
+}
+
+.dark-mode .header,
+.dark-mode .card,
+.dark-mode .category-card,
+.dark-mode .breaking,
+.dark-mode .languages button,
+.dark-mode .search-box input{
+    background:#111827;
+    color:#f3f4f6;
+}
+
+.dark-mode .logo-text p{
+    color:#ddd;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    .header-inner{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .logo{
+        width:270px;
+    }
+
+    .main-grid{
+        grid-template-columns:1fr;
+    }
+
+    .category-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-inner{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        height:350px;
+    }
+
+    .hero h2{
+        font-size:25px;
+    }
+
+}
+
+@media(max-width:550px){
+
+    .topbar-inner{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .logo{
+        width:230px;
+    }
+
+    .breaking{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .breaking-title{
+        text-align:center;
+    }
+
+    .news-item{
+        grid-template-columns:90px 1fr;
+    }
+
+    .news-image{
+        height:70px;
+    }
+
+    .news-item h3{
+        font-size:15px;
+    }
+
+    .container{
+        padding:12px;
+    }
+
+}
+
 </style>
 </head>
+
 <body>
 
-<header class="header">
-  <div class="topline"><div class="topin"><span>गंगा अटल • सत्य धारा, अटल निश्चय</span><span>विश्वसनीय बातम्या • स्थानिक घडामोडी</span></div></div>
-  <div class="head">
-    <div>
-      <img src="logo-4.jpg" class="logo" alt="गंगा अटल लोगो">
-      <div class="tagline">सत्य धारा, अटल निश्चय</div>
+<!-- TOP BAR -->
+
+<div class="topbar">
+    <div class="topbar-inner">
+        <div>गंगा अटल • सत्य धारा, अटल निष्पक्ष</div>
+        <div>विश्वसनीय बातम्या • स्थानिक घडामोडी</div>
     </div>
-    <div class="headright">
-      <div class="date" id="today"></div>
-      <div class="lang">
-        <button class="active" onclick="setLang('mr',this)">मराठी</button>
-        <button onclick="setLang('hi',this)">हिंदी</button>
-        <button onclick="setLang('en',this)">English</button>
-      </div>
-    </div>
-  </div>
-  <nav class="nav"><div class="navin">
-    <a href="#" onclick="goHome();return false">मुख्यपृष्ठ</a>
-    <a href="#akola">अकोला</a><a href="#maharashtra">महाराष्ट्र</a><a href="#india">देश</a>
-    <a href="#politics">राजकारण</a><a href="#sports">क्रीडा</a><a href="#entertainment">मनोरंजन</a>
-    <a href="#epaper">ई-पेपर</a>
-  </div></nav>
-</header>
-
-<div class="container">
-  <div class="breaking"><strong id="breakingLabel">ब्रेकिंग न्यूज</strong><div class="ticker" id="ticker">गंगा अटल — ताज्या बातम्या आणि घडामोडी</div></div>
-
-  <section class="hero">
-    <div class="slides" id="slides"></div>
-    <div class="hero-controls"><button onclick="prevHero()">‹</button><button onclick="nextHero()">›</button></div>
-    <div class="hero-dots" id="heroDots"></div>
-  </section>
-
-  <div class="adbox" id="adbox">
-    <div class="adslides" id="adslides"></div>
-    <div class="adcontrols"><button onclick="prevAd()">‹</button><button onclick="nextAd()">›</button></div>
-    <div class="dots" id="dots"></div>
-  </div>
-
-  <div class="grid">
-    <main class="card">
-      <h2 class="sectiontitle" id="latestTitle">ताज्या बातम्या</h2>
-      <div id="newsList" class="news-grid"></div>
-    </main>
-    <aside>
-      <div class="card epaper" id="epaper">
-        <h2 class="sectiontitle" id="epTitle">आजचा ई-पेपर</h2>
-        <p id="epText">आजचे वर्तमानपत्र PDF स्वरूपात वाचा.</p>
-        <button class="primary" onclick="openEpaper()">ई-पेपर वाचा</button>
-      </div>
-      <div class="card sidebox popular">
-        <h2 class="sectiontitle" id="popularTitle">लोकप्रिय बातम्या</h2>
-        <div id="popularList"></div>
-      </div>
-    </aside>
-  </div>
 </div>
 
-<footer><div class="foot"><b>गंगा अटल</b><div>सत्य धारा, अटल निश्चय</div><a class="adminlink" href="#" onclick="openLogin();return false">Admin Login</a></div></footer>
 
-<div class="modal" id="loginModal"><div class="modalbox loginbox">
-  <button class="close" onclick="closeModal('loginModal')">×</button><h2>Admin Login</h2>
-  <p class="small">Demo login: admin / Admin@1234</p>
-  <div class="field"><label>Login ID</label><input id="loginId" autocomplete="username"></div>
-  <div class="field"><label>Password</label><input id="loginPass" type="password" autocomplete="current-password"></div>
-  <button class="primary" onclick="login()">Login</button><p id="loginMsg"></p>
-</div></div>
+<!-- HEADER -->
 
-<div class="modal" id="adminModal"><div class="modalbox">
-  <button class="close" onclick="closeModal('adminModal')">×</button><h2>Admin Dashboard</h2>
-  <div class="tabs">
-    <button class="tab active" onclick="tab('newsPanel',this)">बातम्या</button>
-    <button class="tab" onclick="tab('adPanel',this)">जाहिराती</button>
-    <button class="tab" onclick="tab('paperPanel',this)">E-Paper</button>
-    <button class="tab" onclick="tab('passPanel',this)">Password Change</button>
-  </div>
+<header class="header">
 
-  <section class="panel active" id="newsPanel"><h3>नवीन बातमी</h3>
-    <div class="field"><label>Category</label><select id="ncat"><option>अकोला</option><option>महाराष्ट्र</option><option>देश</option><option>राजकारण</option><option>क्रीडा</option><option>मनोरंजन</option></select></div>
-    <div class="field"><label>Marathi Headline</label><input id="nmr"></div>
-    <div class="field"><label>Hindi Headline</label><input id="nhi"></div>
-    <div class="field"><label>English Headline</label><input id="nen"></div>
-    <div class="field"><label>Marathi Text</label><textarea id="tmr" rows="3"></textarea></div>
-    <div class="field"><label>Hindi Text</label><textarea id="thi" rows="3"></textarea></div>
-    <div class="field"><label>English Text</label><textarea id="ten" rows="3"></textarea></div>
-    <div class="field"><label>Photo</label><input id="nimg" type="file" accept="image/*"></div>
-    <button class="primary" onclick="addNews()">बातमी प्रकाशित करा</button><hr><h3>Published News</h3><div id="adminNews"></div>
-  </section>
+    <div class="header-inner">
 
-  <section class="panel" id="adPanel"><h3>Sliding Advertisement</h3>
-    <div class="field"><label>Advertisement Image</label><input id="adimg" type="file" accept="image/*"></div>
-    <div class="field"><label>Click URL (optional)</label><input id="adurl" placeholder="https://..."></div>
-    <button class="primary" onclick="addAd()">जाहिरात अपलोड करा</button>
-    <p class="small">जाहिराती Homepage वर आपोआप स्लाइड होतील.</p><div id="adminAds"></div>
-  </section>
+        <div class="logo-area">
 
-  <section class="panel" id="paperPanel"><h3>E-Paper</h3>
-    <div class="field"><label>Edition / Date</label><input id="paperTitle" placeholder="आजचा ई-पेपर"></div>
-    <div class="field"><label>PDF File</label><input id="paperFile" type="file" accept="application/pdf"></div>
-    <button class="primary" onclick="addPaper()">PDF अपलोड करा</button><div id="adminPaper"></div>
-  </section>
+            <!-- logo-4.jpg असेल तर ते दाखवेल -->
+            <img
+                src="logo-4.jpg"
+                class="logo"
+                alt="गंगा अटल लोगो"
+            >
 
-  <section class="panel" id="passPanel"><h3>Change Admin Password</h3>
-    <div class="field"><label>Current Password</label><input id="oldpass" type="password"></div>
-    <div class="field"><label>New Password</label><input id="newpass" type="password"></div>
-    <div class="field"><label>Confirm New Password</label><input id="newpass2" type="password"></div>
-    <button class="primary" onclick="changePassword()">Password Change करा</button><p id="passMsg"></p>
-  </section>
-</div></div>
+        </div>
+
+        <div>
+
+            <div class="languages">
+                <button class="active">मराठी</button>
+                <button>हिंदी</button>
+                <button>English</button>
+            </div>
+
+            <br>
+
+            <button
+                class="btn"
+                onclick="toggleDarkMode()">
+                🌙 Dark Mode
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav class="navbar">
+
+    <div class="nav-inner">
+
+        <a href="#" class="active">मुखपृष्ठ</a>
+        <a href="#maharashtra">महाराष्ट्र</a>
+        <a href="#desh">देश</a>
+        <a href="#rajkaran">राजकारण</a>
+        <a href="#krida">क्रीडा</a>
+        <a href="#manoranjan">मनोरंजन</a>
+        <a href="#epaper">ई-पेपर</a>
+
+    </div>
+
+</nav>
+
+
+<main class="container">
+
+
+<!-- BREAKING NEWS -->
+
+<div class="breaking">
+
+    <div class="breaking-title">
+        🔴 ब्रेकिंग न्यूज
+    </div>
+
+    <div class="breaking-news">
+
+        <span>
+            गंगा अटलवर वाचा महाराष्ट्रातील आणि देशातील ताज्या घडामोडी •
+            महत्त्वाच्या बातम्या • स्थानिक बातम्या • राजकीय घडामोडी
+        </span>
+
+    </div>
+
+</div>
+
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+    <input
+        type="search"
+        id="searchInput"
+        placeholder="बातमी शोधा..."
+        onkeyup="searchNews()"
+    >
+
+    <button
+        class="btn"
+        onclick="searchNews()">
+        🔎 शोधा
+    </button>
+
+</div>
+
+
+<!-- MAIN GRID -->
+
+<div class="main-grid">
+
+
+<!-- LEFT -->
+
+<section>
+
+    <div class="card">
+
+        <div class="hero">
+
+            <div class="hero-content">
+
+                <span class="category">
+                    ताज्या बातम्या
+                </span>
+
+                <h2>
+                    महाराष्ट्रातील ताज्या घडामोडी
+                    आणि महत्त्वाच्या बातम्या
+                </h2>
+
+                <p>
+                    गंगा अटलवर वाचा विश्वासार्ह आणि
+                    निष्पक्ष बातम्या.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="card" style="margin-top:18px;">
+
+        <div class="card-body">
+
+            <div class="section-title">
+
+                <h2>
+                    ताज्या बातम्या
+                </h2>
+
+            </div>
+
+
+            <div class="news-list" id="newsList">
+
+
+                <article class="news-item">
+
+                    <div class="news-image">
+                        बातमी फोटो
+                    </div>
+
+                    <div>
+
+                        <span class="category">
+                            महाराष्ट्र
+                        </span>
+
+                        <h3>
+                            महाराष्ट्रातील महत्त्वाच्या
+                            घडामोडींवर गंगा अटलचा विशेष रिपोर्ट
+                        </h3>
+
+                        <div class="date">
+                            आज • 10 मिनिटांपूर्वी
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="news-item">
+
+                    <div class="news-image">
+                        बातमी फोटो
+                    </div>
+
+                    <div>
+
+                        <span class="category">
+                            राजकारण
+                        </span>
+
+                        <h3>
+                            राज्यातील राजकीय घडामोडींना वेग;
+                            नेत्यांच्या बैठका सुरू
+                        </h3>
+
+                        <div class="date">
+                            आज • 25 मिनिटांपूर्वी
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="news-item">
+
+                    <div class="news-image">
+                        बातमी फोटो
+                    </div>
+
+                    <div>
+
+                        <span class="category">
+                            देश
+                        </span>
+
+                        <h3>
+                            देशातील महत्त्वाच्या घडामोडींचा
+                            जाणून घ्या संपूर्ण आढावा
+                        </h3>
+
+                        <div class="date">
+                            आज • 40 मिनिटांपूर्वी
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="news-item">
+
+                    <div class="news-image">
+                        बातमी फोटो
+                    </div>
+
+                    <div>
+
+                        <span class="category">
+                            क्रीडा
+                        </span>
+
+                        <h3>
+                            क्रीडा विश्वातील आजच्या
+                            महत्त्वाच्या बातम्या
+                        </h3>
+
+                        <div class="date">
+                            आज • 1 तासापूर्वी
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="news-item">
+
+                    <div class="news-image">
+                        बातमी फोटो
+                    </div>
+
+                    <div>
+
+                        <span class="category">
+                            मनोरंजन
+                        </span>
+
+                        <h3>
+                            मनोरंजन विश्वातील ताज्या
+                            घडामोडी आणि अपडेट्स
+                        </h3>
+
+                        <div class="date">
+                            आज • 2 तासांपूर्वी
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+
+<!-- EPAPER -->
+
+<div class="epaper" id="epaper">
+
+    <h2>
+        📰 आजचा ई-पेपर
+    </h2>
+
+    <p>
+        आजचे वर्तमानपत्र PDF स्वरूपात वाचा.
+    </p>
+
+    <button
+        class="btn"
+        onclick="openEpaper()">
+        ई-पेपर वाचा
+    </button>
+
+</div>
+
+
+<!-- POPULAR -->
+
+<div class="card popular">
+
+    <div class="section-title">
+
+        <h2>
+            लोकप्रिय बातम्या
+        </h2>
+
+    </div>
+
+
+    <div class="popular-item">
+
+        <div class="number">1</div>
+
+        <h3>
+            महाराष्ट्रातील आजच्या प्रमुख
+            बातम्या एका क्लिकवर
+        </h3>
+
+    </div>
+
+
+    <div class="popular-item">
+
+        <div class="number">2</div>
+
+        <h3>
+            राज्यातील महत्त्वाच्या राजकीय
+            घडामोडी
+        </h3>
+
+    </div>
+
+
+    <div class="popular-item">
+
+        <div class="number">3</div>
+
+        <h3>
+            देशातील ताज्या घडामोडी
+        </h3>
+
+    </div>
+
+
+    <div class="popular-item">
+
+        <div class="number">4</div>
+
+        <h3>
+            क्रीडा विश्वातील मोठ्या बातम्या
+        </h3>
+
+    </div>
+
+
+    <div class="popular-item">
+
+        <div class="number">5</div>
+
+        <h3>
+            मनोरंजन क्षेत्रातील ताजे अपडेट्स
+        </h3>
+
+    </div>
+
+</div>
+
+</aside>
+
+</div>
+
+
+<!-- CATEGORIES -->
+
+<section class="category-section">
+
+    <div class="section-title">
+        <h2>
+            विभाग
+        </h2>
+    </div>
+
+
+    <div class="category-grid">
+
+
+        <div
+            class="category-card"
+            id="maharashtra">
+
+            <h3>महाराष्ट्र</h3>
+
+            <p>
+                महाराष्ट्रातील जिल्हानिहाय,
+                स्थानिक आणि राज्यातील ताज्या बातम्या.
+            </p>
+
+        </div>
+
+
+        <div
+            class="category-card"
+            id="desh">
+
+            <h3>देश</h3>
+
+            <p>
+                देशभरातील महत्त्वाच्या
+                राष्ट्रीय घडामोडी.
+            </p>
+
+        </div>
+
+
+        <div
+            class="category-card"
+            id="rajkaran">
+
+            <h3>राजकारण</h3>
+
+            <p>
+                महाराष्ट्र आणि देशातील
+                राजकीय घडामोडींचा आढावा.
+            </p>
+
+        </div>
+
+
+        <div
+            class="category-card"
+            id="krida">
+
+            <h3>क्रीडा</h3>
+
+            <p>
+                क्रिकेट, फुटबॉल आणि
+                इतर क्रीडा विश्वातील बातम्या.
+            </p>
+
+        </div>
+
+
+        <div
+            class="category-card"
+            id="manoranjan">
+
+            <h3>मनोरंजन</h3>
+
+            <p>
+                सिनेमा, कलाकार आणि
+                मनोरंजन विश्वातील ताजे अपडेट्स.
+            </p>
+
+        </div>
+
+
+        <div class="category-card">
+
+            <h3>विशेष</h3>
+
+            <p>
+                गंगा अटलचे विशेष रिपोर्ट,
+                विश्लेषण आणि महत्त्वाच्या कथा.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-inner">
+
+
+        <div>
+
+            <h2>
+                गंगा अटल
+            </h2>
+
+            <p>
+                सत्य धारा, अटल निष्पक्ष
+            </p>
+
+            <br>
+
+            <p>
+                विश्वासार्ह बातम्या आणि
+                स्थानिक घडामोडी आपल्या वाचकांपर्यंत
+                पोहोचवण्याचा आमचा प्रयत्न.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                महत्त्वाचे विभाग
+            </h3>
+
+            <ul>
+
+                <li>मुखपृष्ठ</li>
+                <li>महाराष्ट्र</li>
+                <li>देश</li>
+                <li>राजकारण</li>
+                <li>क्रीडा</li>
+
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                संपर्क
+            </h3>
+
+            <ul>
+
+                <li>आमच्याबद्दल</li>
+                <li>संपर्क साधा</li>
+                <li>जाहिरात</li>
+                <li>गोपनीयता धोरण</li>
+
+            </ul>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 गंगा अटल • सर्व हक्क राखीव
+
+    </div>
+
+</footer>
+
 
 <script>
-const LANG={
- mr:{latest:"ताज्या बातम्या",popular:"लोकप्रिय बातम्या",breaking:"ब्रेकिंग न्यूज",ep:"आजचा ई-पेपर",eptext:"आजचे वर्तमानपत्र PDF स्वरूपात वाचा.",read:"ई-पेपर वाचा"},
- hi:{latest:"ताज़ा खबरें",popular:"लोकप्रिय खबरें",breaking:"ब्रेकिंग न्यूज़",ep:"आज का ई-पेपर",eptext:"आज का अखबार PDF में पढ़ें.",read:"ई-पेपर पढ़ें"},
- en:{latest:"Latest News",popular:"Popular News",breaking:"Breaking News",ep:"Today's E-Paper",eptext:"Read today's newspaper in PDF format.",read:"Read E-Paper"}
-};
-let lang='mr',heroIndex=0,heroTimer,adIndex=0,adTimer;
-const seedNews=[
-{id:1,cat:'अकोला',date:new Date().toLocaleDateString('mr-IN'),title:{mr:'अकोला शहरातील महत्त्वाच्या घडामोडी',hi:'अकोला शहर की महत्वपूर्ण खबरें',en:'Important Akola city updates'},text:{mr:'शहरातील ताज्या घडामोडी, नागरिकांच्या समस्या आणि स्थानिक बातम्यांचे अपडेट.',hi:'शहर की ताज़ा घटनाओं और स्थानीय खबरों का अपडेट.',en:'Updates on major city events, civic issues and local news.'},img:''},
-{id:2,cat:'महाराष्ट्र',date:new Date().toLocaleDateString('mr-IN'),title:{mr:'महाराष्ट्रातील ताज्या घडामोडी',hi:'महाराष्ट्र की ताज़ा खबरें',en:'Latest Maharashtra updates'},text:{mr:'राज्यभरातील महत्त्वाच्या बातम्यांचा आढावा.',hi:'राज्य की महत्वपूर्ण खबरों का जायज़ा.',en:'A roundup of important news from across the state.'},img:''}
-];
-function load(k,f){try{return JSON.parse(localStorage.getItem(k))??f}catch(e){return f}}
-let news=load('ds_news',seedNews),ads=load('ds_ads',[]),papers=load('ds_papers',[]);
-if(!localStorage.getItem('ds_pass'))localStorage.setItem('ds_pass','Admin@1234');
-function save(){localStorage.setItem('ds_news',JSON.stringify(news));localStorage.setItem('ds_ads',JSON.stringify(ads));localStorage.setItem('ds_papers',JSON.stringify(papers))}
-function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
-function setLang(x,b){lang=x;document.querySelectorAll('.lang button').forEach(q=>q.classList.remove('active'));b.classList.add('active');const a=LANG[x];latestTitle.textContent=a.latest;popularTitle.textContent=a.popular;breakingLabel.textContent=a.breaking;epTitle.textContent=a.ep;epText.textContent=a.eptext;document.querySelector('#epaper button').textContent=a.read;renderNews();renderHero()}
-function renderNews(){
- const list=document.getElementById('newsList');list.innerHTML='';
- [...news].reverse().forEach(n=>{let d=document.createElement('article');d.className='story';
- d.innerHTML='<div class="meta">'+esc(n.cat)+' • '+esc(n.date)+'</div><h3>'+esc(n.title[lang]||n.title.mr||n.title.hi||n.title.en)+'</h3>'+(n.img?'<img src="'+n.img+'" alt="">':'')+'<p>'+esc(n.text[lang]||n.text.mr||n.text.hi||n.text.en)+'</p>';list.appendChild(d)});
- document.getElementById('popularList').innerHTML=news.slice(-3).reverse().map((n,i)=>'<div class="story"><div class="popular"><span class="rank">'+(i+1)+'</span><b>'+esc(n.title[lang]||n.title.mr||n.title.hi||n.title.en)+'</b></div></div>').join('')
+
+/* DARK MODE */
+
+function toggleDarkMode(){
+
+    document.body.classList.toggle("dark-mode");
+
 }
-function renderHero(){
- const box=document.getElementById('slides'),dots=document.getElementById('heroDots');box.innerHTML='';dots.innerHTML='';
- const arr=news.length?news.slice(-5).reverse():seedNews;
- arr.forEach((n,i)=>{let s=document.createElement('div');s.className='slide';s.innerHTML=(n.img?'<img src="'+n.img+'" alt="">':'')+'<div class="overlay"></div><div class="caption"><span class="badge">'+esc(n.cat)+'</span><h1>'+esc(n.title[lang]||n.title.mr||n.title.hi||n.title.en)+'</h1><p>'+esc(n.text[lang]||n.text.mr||n.text.hi||n.text.en)+'</p></div>';box.appendChild(s);
- let d=document.createElement('span');d.className='hero-dot'+(i===0?' on':'');d.onclick=()=>{heroIndex=i;showHero()};dots.appendChild(d)});
- heroIndex=Math.min(heroIndex,arr.length-1);showHero();clearInterval(heroTimer);heroTimer=setInterval(nextHero,5000)
+
+
+/* SEARCH */
+
+function searchNews(){
+
+    const input =
+        document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+    const items =
+        document
+        .querySelectorAll(".news-item");
+
+    items.forEach(function(item){
+
+        const text =
+            item.innerText.toLowerCase();
+
+        if(text.includes(input)){
+            item.style.display="grid";
+        }else{
+            item.style.display="none";
+        }
+
+    });
+
 }
-function showHero(){document.getElementById('slides').style.transform='translateX(-'+(heroIndex*100)+'%)';document.querySelectorAll('.hero-dot').forEach((d,i)=>d.classList.toggle('on',i===heroIndex))}
-function nextHero(){let l=document.querySelectorAll('.slide').length;if(!l)return;heroIndex=(heroIndex+1)%l;showHero()}
-function prevHero(){let l=document.querySelectorAll('.slide').length;if(!l)return;heroIndex=(heroIndex-1+l)%l;showHero()}
-function renderAds(){
- const box=document.getElementById('adslides'),dots=document.getElementById('dots');box.innerHTML='';dots.innerHTML='';
- let arr=ads.length?ads:[{img:'',text:'तुमच्या व्यवसायाची जाहिरात येथे द्या'},{img:'',text:'आपल्या संस्थेची जाहिरात येथे द्या'}];
- arr.forEach((a,i)=>{let s=document.createElement('div');s.className='adslide';s.innerHTML=a.img?'<a href="'+esc(a.url||'#')+'" target="_blank"><img src="'+a.img+'" alt=""></a>':'<div class="adtext">'+esc(a.text)+'</div>';box.appendChild(s);let d=document.createElement('span');d.className='dot'+(i===0?' on':'');d.onclick=()=>{adIndex=i;showAd()};dots.appendChild(d)});
- adIndex=Math.min(adIndex,arr.length-1);showAd();clearInterval(adTimer);adTimer=setInterval(nextAd,4000)
+
+
+/* EPAPER */
+
+function openEpaper(){
+
+    alert(
+        "ई-पेपरची PDF लिंक अजून जोडलेली नाही. PDF उपलब्ध झाल्यावर येथे लिंक जोडा."
+    );
+
 }
-function showAd(){document.getElementById('adslides').style.transform='translateX(-'+(adIndex*100)+'%)';document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('on',i===adIndex))}
-function nextAd(){let l=document.querySelectorAll('.adslide').length;if(!l)return;adIndex=(adIndex+1)%l;showAd()}
-function prevAd(){let l=document.querySelectorAll('.adslide').length;if(!l)return;adIndex=(adIndex-1+l)%l;showAd()}
-function openLogin(){document.getElementById('loginModal').classList.add('show')}
-function closeModal(id){document.getElementById(id).classList.remove('show')}
-function login(){if(loginId.value==='admin'&&loginPass.value===localStorage.getItem('ds_pass')){closeModal('loginModal');document.getElementById('adminModal').classList.add('show');renderAdmin()}else loginMsg.textContent='Login ID किंवा Password चुकीचा आहे.'}
-function tab(id,b){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));b.classList.add('active');renderAdmin()}
-function readFile(input){return new Promise((res,rej)=>{const f=input.files[0];if(!f)return res('');const r=new FileReader();r.onload=()=>res(r.result);r.onerror=rej;r.readAsDataURL(f)})}
-async function addNews(){
- let n={id:Date.now(),cat:ncat.value,date:new Date().toLocaleDateString('mr-IN'),title:{mr:nmr.value.trim(),hi:nhi.value.trim(),en:nen.value.trim()},text:{mr:tmr.value.trim(),hi:thi.value.trim(),en:ten.value.trim()},img:await readFile(nimg)};
- if(!n.title.mr&&!n.title.hi&&!n.title.en){alert('किमान एक मथळा द्या');return}
- news.push(n);save();['nmr','nhi','nen','tmr','thi','ten'].forEach(id=>document.getElementById(id).value='');nimg.value='';renderNews();renderHero();renderAdmin();alert('बातमी प्रकाशित झाली.')
-}
-async function addAd(){let img=await readFile(adimg);if(!img){alert('जाहिरातीचा फोटो निवडा');return}ads.push({id:Date.now(),img,url:adurl.value.trim()});save();adimg.value='';adurl.value='';renderAds();renderAdmin();alert('जाहिरात अपलोड झाली.')}
-async function addPaper(){let file=await readFile(paperFile);if(!file){alert('PDF निवडा');return}papers.push({id:Date.now(),title:paperTitle.value||'आजचा ई-पेपर',file});save();paperFile.value='';paperTitle.value='';renderAdmin();alert('E-Paper अपलोड झाला.')}
-function del(type,id){if(!confirm('हे delete करायचे आहे का?'))return;if(type==='news')news=news.filter(x=>x.id!==id);if(type==='ad')ads=ads.filter(x=>x.id!==id);if(type==='paper')papers=papers.filter(x=>x.id!==id);save();renderNews();renderHero();renderAds();renderAdmin()}
-function renderAdmin(){
- adminNews.innerHTML=news.slice().reverse().map(n=>'<div class="adminrow"><div class="grow"><b>'+esc(n.title.mr||n.title.hi||n.title.en)+'</b><div class="small">'+esc(n.cat)+'</div></div><button class="danger" onclick="del(\\'news\\','+n.id+')">Delete</button></div>').join('');
- adminAds.innerHTML=ads.slice().reverse().map(a=>'<div class="adminrow"><img src="'+a.img+'"><div class="grow">'+esc(a.url||'No link')+'</div><button class="danger" onclick="del(\\'ad\\','+a.id+')">Delete</button></div>').join('');
- adminPaper.innerHTML=papers.slice().reverse().map(p=>'<div class="adminrow"><div class="grow"><b>'+esc(p.title)+'</b></div><a class="primary" href="'+p.file+'" download>PDF</a><button class="danger" onclick="del(\\'paper\\','+p.id+')">Delete</button></div>').join('')
-}
-function changePassword(){let old=oldpass.value,n=newpass.value,c=newpass2.value;if(old!==localStorage.getItem('ds_pass')){passMsg.textContent='Current Password चुकीचा आहे.';return}if(n.length<8){passMsg.textContent='नवीन Password किमान 8 characters असावा.';return}if(n!==c){passMsg.textContent='दोन्ही नवीन Password समान नाहीत.';return}localStorage.setItem('ds_pass',n);passMsg.textContent='Password यशस्वीपणे बदलला.';oldpass.value=newpass.value=newpass2.value=''}
-function openEpaper(){if(!papers.length){alert('सध्या E-Paper उपलब्ध नाही. Admin Panel मधून PDF अपलोड करा.');return}window.open(papers[papers.length-1].file,'_blank')}
-function goHome(){window.scrollTo({top:0,behavior:'smooth'})}
-document.getElementById('today').textContent=new Date().toLocaleDateString('mr-IN',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
-renderNews();renderHero();renderAds();
+
+
+/* LANGUAGE BUTTON */
+
+document
+.querySelectorAll(".languages button")
+.forEach(function(button){
+
+    button.addEventListener("click",function(){
+
+        document
+        .querySelectorAll(".languages button")
+        .forEach(function(btn){
+            btn.classList.remove("active");
+        });
+
+        this.classList.add("active");
+
+    });
+
+});
+
 </script>
+
 </body>
 </html>
