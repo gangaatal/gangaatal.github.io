@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="mr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>गंगा अटल | सत्य धारा, अटल निष्पक्ष</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,"Noto Sans Devanagari","Nirmala UI",sans-serif;background:#f3f4f6;color:#111827}a{text-decoration:none;color:inherit}.wrap{max-width:1180px;margin:auto;padding:0 18px}
+.top{background:#101827;color:#fff;padding:8px 0;font-weight:700}.top .wrap{display:flex;justify-content:space-between;gap:10px}
+header{background:#fff}.head{min-height:145px;display:flex;align-items:center;justify-content:space-between;gap:20px}.logo{width:370px;max-width:60%;object-fit:contain}.actions{text-align:right}.langs button,.btn{border:1px solid #cbd5e1;background:#fff;border-radius:7px;padding:9px 14px;font-weight:800;cursor:pointer}.langs button.active,.red{background:#ed1c24!important;color:#fff;border-color:#ed1c24!important}
+.theme{margin-top:12px}.nav{background:#101827;border-bottom:3px solid #ed1c24}.navin{display:flex;overflow:auto}.nav a{color:#fff;font-weight:800;padding:15px 16px;white-space:nowrap}.nav a.active,.nav a:hover{background:#ed1c24}
+.break{display:flex;background:#fff;border-radius:9px;overflow:hidden;margin:20px 0 14px}.break b{background:#ed1c24;color:#fff;padding:12px 18px;white-space:nowrap}.break span{padding:12px 18px;font-weight:700}
+.search{display:flex;gap:10px;margin-bottom:18px}.search input{flex:1;padding:13px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px}.search button,.primary{border:0;background:#ed1c24;color:#fff;border-radius:8px;padding:0 24px;font-weight:900;cursor:pointer}
+.grid{display:grid;grid-template-columns:2fr 1fr;gap:18px}.card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 3px 15px #0001;margin-bottom:18px}.title{border-left:6px solid #ed1c24;padding-left:12px;font-size:25px;font-weight:900;margin-bottom:16px}
+.hero{position:relative;border-radius:12px;overflow:hidden;cursor:pointer}.hero img{width:100%;height:410px;object-fit:cover}.overlay{position:absolute;left:0;right:0;bottom:0;padding:70px 24px 22px;color:#fff;background:linear-gradient(transparent,#000d)}.badge{display:inline-block;background:#ed1c24;color:#fff;padding:4px 9px;border-radius:5px;font-weight:900}.overlay h1{font-size:30px;margin:8px 0 0}
+.side{background:#172033;color:#fff;border-radius:12px;padding:22px;margin-bottom:18px}.side h2{border-left:6px solid #ed1c24;padding-left:10px}.side button,.side a{display:inline-block;margin-top:10px;background:#ed1c24;color:#fff;border:0;border-radius:7px;padding:10px 16px;font-weight:900}
+.section{margin:28px 0}.sect{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid #ed1c24;margin-bottom:14px}.sect h2{font-size:27px}.more{color:#ed1c24;font-weight:900}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.news{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 3px 12px #0001;cursor:pointer}.news img{width:100%;height:150px;object-fit:cover}.news .body{padding:13px}.news h3{margin:0;font-size:18px;line-height:1.4}.small{font-size:13px;color:#64748b;margin-top:6px}.read{color:#ed1c24;font-weight:900;display:inline-block;margin-top:6px}
+.article{background:#fff;border-radius:12px;padding:28px;margin:25px 0}.article img{width:100%;max-height:560px;object-fit:cover;border-radius:10px;margin:15px 0}.article h1{font-size:38px;line-height:1.3}.articletext{font-size:19px;white-space:pre-wrap;line-height:1.8}.source{margin-top:20px;padding:12px;background:#f1f5f9;border-left:4px solid #ed1c24}.back{display:inline-block;background:#101827;color:#fff;padding:9px 14px;border-radius:7px;font-weight:800}
+footer{background:#101827;color:#fff;margin-top:35px;padding:30px 0}.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:20px}.foot ul{list-style:none;padding:0}.foot li{margin:6px 0;color:#cbd5e1}.copy{text-align:center;border-top:1px solid #334155;margin-top:20px;padding-top:15px;color:#94a3b8}
+.modal{display:none;position:fixed;inset:0;background:#0009;z-index:99;padding:20px;overflow:auto}.modal.show{display:block}.modalbox{background:#fff;max-width:900px;margin:25px auto;border-radius:12px;padding:22px;position:relative}.close{position:absolute;right:14px;top:8px;border:0;background:none;font-size:30px;cursor:pointer}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}.tab{border:1px solid #cbd5e1;background:#fff;padding:9px 13px;border-radius:7px;font-weight:800;cursor:pointer}.tab.active{background:#101827;color:#fff}.panel{display:none}.panel.active{display:block}.field{margin:12px 0}.field label{display:block;font-weight:800;margin-bottom:5px}.field input,.field select,.field textarea{width:100%;padding:11px;border:1px solid #cbd5e1;border-radius:7px;font:inherit}.adminrow{display:flex;align-items:center;gap:12px;border-bottom:1px solid #e2e8f0;padding:10px 0}.adminrow img{width:75px;height:52px;object-fit:cover;border-radius:5px}.grow{flex:1}.danger{background:#7f1d1d;color:#fff;border:0;padding:7px 10px;border-radius:6px;cursor:pointer}.note{background:#fff7ed;border-left:4px solid #f97316;padding:10px;margin:10px 0}.empty{text-align:center;padding:30px;color:#64748b}
+body.dark{background:#0b1220;color:#f5f7fa}body.dark header,body.dark .card,body.dark .news,body.dark .article,body.dark .break,body.dark .modalbox{background:#111827;color:#fff}body.dark .langs button,body.dark .btn,body.dark .tab,body.dark .field input,body.dark .field select,body.dark .field textarea{background:#111827;color:#fff;border-color:#64748b}body.dark .source{background:#1e293b}
+@media(max-width:850px){.head{flex-direction:column;align-items:center}.actions{text-align:center}.grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.foot{grid-template-columns:1fr}.logo{max-width:85%}}
+@media(max-width:520px){.top .wrap{font-size:11px;flex-direction:column}.nav a{font-size:14px;padding:12px}.break{flex-direction:column}.search{flex-direction:column}.search button{padding:12px}.cards{grid-template-columns:1fr}.hero img{height:300px}.overlay h1{font-size:23px}.article h1{font-size:28px}}
+
+/* Professional responsive mobile redesign */
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{overflow-x:hidden}
+.mobilebar{display:none}
+@media(max-width:850px){
+  .wrap{padding:0 14px}
+  .top{padding:6px 0;font-size:12px}
+  .top .wrap{flex-direction:row;align-items:center;justify-content:center}
+  .top #trust{display:none}
+  header{background:#fff}
+  .head{min-height:112px;padding:12px 0;gap:10px}
+  .logo{width:230px;max-width:68%;height:auto}
+  .actions{display:flex;flex-direction:column;align-items:center;gap:8px}
+  .langs{display:flex;gap:4px}
+  .langs button,.btn{padding:7px 10px;font-size:13px;border-radius:8px}
+  .theme{margin-top:0!important}
+  .nav{position:sticky;top:0;z-index:30;box-shadow:0 2px 10px #0003}
+  .navin{gap:2px;scrollbar-width:none;padding:0 4px}
+  .navin::-webkit-scrollbar{display:none}
+  .nav a{font-size:14px;padding:13px 14px}
+  main.wrap{padding-top:4px}
+  .break{margin:14px 0 12px;border-radius:10px;box-shadow:0 2px 10px #0001}
+  .break b,.break span{padding:10px 13px}
+  .search{margin-bottom:14px;gap:8px}
+  .search input{min-width:0;padding:12px;font-size:15px}
+  .search button{padding:0 18px}
+  .grid{display:block}
+  .card{padding:14px;border-radius:12px;margin-bottom:14px}
+  .title{font-size:21px;padding-left:10px;border-left-width:5px;margin-bottom:12px}
+  .hero img{height:260px}
+  .overlay{padding:55px 15px 15px}
+  .overlay h1{font-size:21px;line-height:1.35}
+  .side{padding:16px;border-radius:12px}
+  .side h2{font-size:20px;margin:0 0 8px}
+  .section{margin:20px 0}
+  .sect{margin-bottom:10px}
+  .sect h2{font-size:22px;margin:8px 0}
+  .cards{grid-template-columns:1fr 1fr;gap:10px}
+  .news{border-radius:10px}
+  .news img{height:120px}
+  .news .body{padding:10px}
+  .news h3{font-size:15px;line-height:1.35}
+  .small{font-size:11px}
+  .read{font-size:13px}
+  .article{padding:16px;margin:15px 0;border-radius:12px}
+  .article h1{font-size:26px;line-height:1.35;margin:10px 0}
+  .articletext{font-size:17px;line-height:1.75}
+  .article img{max-height:380px;margin:10px 0}
+  footer{padding:24px 0 88px;margin-top:25px}
+  .foot{grid-template-columns:1fr 1fr;gap:12px}
+  .foot>div:first-child{grid-column:1/-1}
+  .copy{font-size:12px}
+  .mobilebar{display:flex;position:fixed;left:10px;right:10px;bottom:10px;height:58px;background:#101827;color:#fff;border:1px solid #334155;border-radius:18px;z-index:100;box-shadow:0 8px 30px #0007;align-items:center;justify-content:space-around;padding:4px}
+  .mobilebar a{font-size:11px;text-align:center;color:#fff;min-width:62px;padding:6px 4px;border-radius:12px}
+  .mobilebar a span{display:block;font-size:21px;line-height:22px}
+}
+@media(max-width:520px){
+  .top{display:none}
+  .head{min-height:104px;padding:10px 0}
+  .logo{width:205px;max-width:58%}
+  .langs button{padding:6px 8px;font-size:12px}
+  .btn{padding:7px 10px;font-size:12px}
+  .nav a{font-size:14px;padding:12px 13px}
+  .break{margin-top:12px}
+  .break span{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .search input{font-size:14px}
+  .search button{font-size:14px;padding:0 15px}
+  .hero img{height:230px}
+  .cards{grid-template-columns:1fr 1fr}
+  .news img{height:105px}
+  .news h3{font-size:14px}
+  .article h1{font-size:23px}
+}
+
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><span id="tag">गंगा अटल • सत्य धारा, अटल निष्पक्ष</span><span id="trust">विश्वसनीय बातम्या • स्थानिक घडामोडी</span></div></div>
+<header><div class="wrap head"><img src="logo-4.jpg" class="logo" alt="गंगा अटल">
+<div class="actions"><div class="langs"><button id="mr" class="active" onclick="setLang('mr')">मराठी</button><button id="hi" onclick="setLang('hi')">हिंदी</button><button id="en" onclick="setLang('en')">English</button></div><button class="btn red theme" id="theme" onclick="toggleDark()">🌙 Dark Mode</button></div></div></header>
+<nav class="nav"><div class="wrap navin" id="nav"></div></nav>
+<main class="wrap" id="app"></main>
+<div class="mobilebar"><a href="#home"><span>⌂</span>मुखपृष्ठ</a><a href="#akola"><span>📰</span>अकोला</a><a href="#maharashtra"><span>▣</span>महाराष्ट्र</a><a href="#epaper"><span>📄</span>E-Paper</a></div>
+<footer><div class="wrap foot"><div><h3>गंगा अटल</h3><p>सत्य धारा, अटल निष्पक्ष</p><p>अकोला • खंडवा • महाराष्ट्र • भारत</p></div><div><h3 id="fsec">विभाग</h3><ul id="flinks"></ul></div><div><h3>Admin</h3><ul><li><a href="#" onclick="openLogin();return false">🔐 Admin Login</a></li></ul></div></div><div class="wrap copy">© 2026 गंगा अटल • सर्व हक्क राखीव</div></footer>
+
+<div class="modal" id="loginModal"><div class="modalbox" style="max-width:450px"><button class="close" onclick="closeModal('loginModal')">×</button><h2>गंगा अटल Admin Login</h2><div class="note">Demo Login: <b>admin</b> / <b>Admin@1234</b></div><div class="field"><label>Login ID</label><input id="loginId"></div><div class="field"><label>Password</label><input id="loginPass" type="password"></div><button class="primary" onclick="login()">Login</button><p id="loginMsg"></p></div></div>
+
+<div class="modal" id="adminModal"><div class="modalbox"><button class="close" onclick="closeModal('adminModal')">×</button><h2>📰 गंगा अटल — Admin Dashboard</h2>
+<div class="tabs"><button class="tab active" onclick="tab('newsPanel',this)">📰 बातम्या</button><button class="tab" onclick="tab('paperPanel',this)">📄 E-Paper</button><button class="tab" onclick="tab('passPanel',this)">🔐 Password</button></div>
+<section class="panel active" id="newsPanel"><h3>नवीन बातमी प्रकाशित करा</h3>
+<div class="field"><label>विभाग</label><select id="ncat"><option>अकोला</option><option>खंडवा</option><option>महाराष्ट्र</option><option>देश</option><option>राजकारण</option><option>क्रीडा</option><option>मनोरंजन</option></select></div>
+<div class="field"><label>मराठी मथळा</label><input id="nmr"></div><div class="field"><label>हिंदी मथळा</label><input id="nhi"></div><div class="field"><label>English Headline</label><input id="nen"></div>
+<div class="field"><label>मराठी पूर्ण बातमी</label><textarea id="tmr" rows="7"></textarea></div><div class="field"><label>हिंदी पूर्ण बातमी</label><textarea id="thi" rows="7"></textarea></div><div class="field"><label>English Full Article</label><textarea id="ten" rows="7"></textarea></div>
+<div class="field"><label>मूळ स्रोत / संदर्भ</label><select id="nsource"><option>Times of India</option><option>Aaj Tak</option><option>स्वतःचा / स्थानिक स्रोत</option></select></div>
+<div class="field"><label>बातमीचा फोटो</label><input id="nimg" type="file" accept="image/*"></div>
+<button class="primary" onclick="addNews()">बातमी प्रकाशित करा</button><hr><h3>Published News</h3><div id="adminNews"></div></section>
+<section class="panel" id="paperPanel"><h3>📄 E-Paper</h3><div class="field"><label>Edition / Date</label><input id="paperTitle" placeholder="आजचा E-Paper"></div><div class="field"><label>PDF File</label><input id="paperFile" type="file" accept="application/pdf"></div><button class="primary" onclick="addPaper()">PDF अपलोड करा</button><div id="adminPaper"></div></section>
+<section class="panel" id="passPanel"><h3>🔐 Admin Password बदला</h3><div class="field"><label>Current Password</label><input id="oldPass" type="password"></div><div class="field"><label>New Password</label><input id="newPass" type="password"></div><div class="field"><label>Confirm New Password</label><input id="newPass2" type="password"></div><button class="primary" onclick="changePassword()">Password बदलून सेव्ह करा</button><p id="passMsg"></p></section>
+</div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL = "https://YOUR_PROJECT_ID.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_5KyK_j50kmZDtFRkVvyKCg_jE1gglvg";
+
+// IMPORTANT: replace YOUR_PROJECT_ID above with the Project URL shown in
+// Supabase → Settings → API. Never put a Supabase Secret key in this file.
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+
+const T={
+mr:{tag:"गंगा अटल • सत्य धारा, अटल निष्पक्ष",trust:"विश्वसनीय बातम्या • स्थानिक घडामोडी",break:"🔴 ब्रेकिंग न्यूज",bt:"गंगा अटलवर वाचा महाराष्ट्र आणि देशातील ताज्या घडामोडी",search:"बातमी शोधा...",searchBtn:"🔎 शोधा",latest:"ताज्या बातम्या",popular:"लोकप्रिय बातम्या",ep:"📰 आजचा ई-पेपर",eptext:"आजचे वर्तमानपत्र PDF स्वरूपात वाचा.",epbtn:"ई-पेपर वाचा",more:"आणखी वाचा →",read:"बातमी वाचा →",none:"या शोधासाठी कोणतीही बातमी सापडली नाही."},
+hi:{tag:"गंगा अटल • सत्य धारा, अटल निष्पक्ष",trust:"विश्वसनीय खबरें • स्थानीय घटनाक्रम",break:"🔴 ब्रेकिंग न्यूज़",bt:"गंगा अटल पर पढ़ें महाराष्ट्र और देश की ताज़ा खबरें",search:"खबर खोजें...",searchBtn:"🔎 खोजें",latest:"ताज़ा खबरें",popular:"लोकप्रिय खबरें",ep:"📰 आज का ई-पेपर",eptext:"आज का समाचार पत्र PDF में पढ़ें।",epbtn:"ई-पेपर पढ़ें",more:"और पढ़ें →",read:"खबर पढ़ें →",none:"इस खोज के लिए कोई खबर नहीं मिली।"},
+en:{tag:"Ganga Atal • Truthful & Unbiased",trust:"Trusted News • Local Updates",break:"🔴 Breaking News",bt:"Read the latest updates from Maharashtra and India on Ganga Atal",search:"Search news...",searchBtn:"🔎 Search",latest:"Latest News",popular:"Popular News",ep:"📰 Today's E-Paper",eptext:"Read today's newspaper in PDF format.",epbtn:"Read E-Paper",more:"Read More →",read:"Read Article →",none:"No news found for this search."}
+};
+const CAT=[["home",{mr:"मुखपृष्ठ",hi:"होम",en:"Home"}],["akola",{mr:"अकोला",hi:"अकोला",en:"Akola"}],["khandwa",{mr:"खंडवा",hi:"खंडवा",en:"Khandwa"}],["maharashtra",{mr:"महाराष्ट्र",hi:"महाराष्ट्र",en:"Maharashtra"}],["desh",{mr:"देश",hi:"भारत",en:"India"}],["rajkaran",{mr:"राजकारण",hi:"राजनीति",en:"Politics"}],["krida",{mr:"क्रीडा",hi:"खेल",en:"Sports"}],["manoranjan",{mr:"मनोरंजन",hi:"मनोरंजन",en:"Entertainment"}],["epaper",{mr:"ई-पेपर",hi:"ई-पेपर",en:"E-Paper"}]];
+
+let lang=localStorage.getItem("ga_lang")||"mr";
+let news=[];
+let papers=[];
+let pass=localStorage.getItem("ga_pass")||"Admin@1234";
+
+function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+function getText(o){return o?.[lang]||o?.mr||o?.hi||o?.en||""}
+function navLabel(c){return c[1][lang]}
+function setLang(l){lang=l;localStorage.setItem("ga_lang",l);render()}
+function renderNav(){document.getElementById("nav").innerHTML=CAT.map(c=>`<a href="#${c[0]}">${navLabel(c)}</a>`).join("")}
+
+async function loadData(){
+  const [nr,pr]=await Promise.all([
+    supabaseClient.from("news").select("*").order("id",{ascending:false}),
+    supabaseClient.from("epapers").select("*").order("id",{ascending:false})
+  ]);
+  if(nr.error){console.error(nr.error);alert("Supabase news table जोडलेली नाही किंवा Project URL चुकीचा आहे.");}
+  else news=(nr.data||[]).map(n=>({
+    id:n.id,cat:n.cat,date:n.date,title:{mr:n.title_mr||"",hi:n.title_hi||"",en:n.title_en||""},
+    body:{mr:n.body_mr||"",hi:n.body_hi||"",en:n.body_en||""},source:n.source||"",img:n.image_url||""
+  }));
+  if(pr.error) console.error(pr.error);
+  else papers=(pr.data||[]).map(p=>({id:p.id,title:p.title,file:p.file_url}));
+  render();
+}
+
+function home(){
+ let L=T[lang], all=[...news].sort((a,b)=>Number(b.id)-Number(a.id)), hero=all[0];
+ return `<div class="break"><b>${L.break}</b><span>${L.bt}</span></div>
+ <form class="search" onsubmit="doSearch(event)"><input id="q" placeholder="${L.search}"><button>${L.searchBtn}</button></form>
+ <div class="grid"><section class="card"><div class="title">${L.latest}</div>${hero?`<div class="hero" onclick="openArticle(${hero.id})"><img src="${hero.img||"logo-4.jpg"}"><div class="overlay"><span class="badge">${esc(hero.cat)}</span><h1>${esc(getText(hero.title))}</h1></div></div>`:`<div class="empty">${L.none}</div>`}</section>
+ <aside><div class="side"><h2>${L.ep}</h2><p>${L.eptext}</p><a href="#epaper">${L.epbtn}</a></div><div class="card"><div class="title">${L.popular}</div>${all.slice(0,5).map(n=>`<p style="padding:8px 0;border-bottom:1px solid #eee;cursor:pointer" onclick="openArticle(${n.id})"><b>${esc(getText(n.title))}</b></p>`).join("")||`<p>${L.none}</p>`}</div></aside></div>
+ <div id="sections">${sections(all)}</div>`;
+}
+function sections(all){
+ let L=T[lang], out="";
+ CAT.slice(1,8).forEach(c=>{let arr=all.filter(n=>n.cat===c[1].mr||n.cat===c[1].hi||n.cat===c[1].en);out+=`<section class="section" id="${c[0]}"><div class="sect"><h2>${navLabel(c)}</h2><a class="more" href="#${c[0]}">${L.more}</a></div><div class="cards">${arr.length?arr.slice(0,6).map(n=>`<article class="news" onclick="openArticle(${n.id})"><img src="${n.img||"logo-4.jpg"}"><div class="body"><h3>${esc(getText(n.title))}</h3><p class="small">${esc(n.cat)} • ${esc(n.date)}</p><span class="read">${L.read}</span></div></article>`).join(""):`<div class="empty" style="grid-column:1/-1">${L.none}</div>`}</div></section>`});
+ out+=`<section class="section" id="epaper"><div class="sect"><h2>${L.ep}</h2></div>${papers.length?papers.map(p=>`<div class="card"><b>${esc(p.title)}</b><br><a class="primary" style="display:inline-block;padding:10px 15px;margin-top:8px" href="${p.file}" target="_blank">${L.epbtn}</a></div>`).join(""):`<div class="empty">${L.eptext}</div>`}</section>`;
+ return out;
+}
+function render(){
+ renderNav();document.getElementById("tag").textContent=T[lang].tag;document.getElementById("trust").textContent=T[lang].trust;
+ document.querySelectorAll(".langs button").forEach(b=>b.classList.remove("active"));document.getElementById(lang).classList.add("active");
+ document.getElementById("app").innerHTML=home();
+ document.getElementById("flinks").innerHTML=CAT.slice(1,8).map(c=>`<li><a href="#${c[0]}">${navLabel(c)}</a></li>`).join("")
+}
+function openArticle(id){let n=news.find(x=>String(x.id)===String(id));if(!n)return;document.getElementById("app").innerHTML=`<div class="article"><a class="back" href="#home">← ${lang==="mr"?"मुखपृष्ठ":lang==="hi"?"होम":"Home"}</a><p><span class="badge">${esc(n.cat)}</span> <span class="small">${esc(n.date)}</span></p><h1>${esc(getText(n.title))}</h1><img src="${n.img||"logo-4.jpg"}" alt=""><div class="articletext">${esc(getText(n.body))}</div><div class="source"><b>${lang==="mr"?"मूळ स्रोत / संदर्भ":lang==="hi"?"मूल स्रोत / संदर्भ":"Original Source / Reference"}:</b> ${esc(n.source||"गंगा अटल")}</div></div>`;window.scrollTo({top:0,behavior:"smooth"})}
+function doSearch(e){e.preventDefault();let q=document.getElementById("q").value.trim().toLowerCase(),L=T[lang];if(!q){render();return}let arr=news.filter(n=>JSON.stringify(n).toLowerCase().includes(q));document.getElementById("app").innerHTML=`<div class="break"><b>🔎 ${L.searchBtn.replace("🔎 ","")}</b><span>${esc(q)}</span></div><section class="section"><div class="sect"><h2>${L.latest}</h2></div><div class="cards">${arr.length?arr.map(n=>`<article class="news" onclick="openArticle(${n.id})"><img src="${n.img||"logo-4.jpg"}"><div class="body"><h3>${esc(getText(n.title))}</h3><p class="small">${esc(n.cat)} • ${esc(n.date)}</p><span class="read">${L.read}</span></div></article>`).join(""):`<div class="empty" style="grid-column:1/-1">${L.none}</div>`}</div></section>`}
+function toggleDark(){document.body.classList.toggle("dark");localStorage.setItem("ga_dark",document.body.classList.contains("dark"));document.getElementById("theme").textContent=document.body.classList.contains("dark")?"☀️ Light Mode":"🌙 Dark Mode"}
+if(localStorage.getItem("ga_dark")==="true")document.body.classList.add("dark");
+function openLogin(){document.getElementById("loginModal").classList.add("show")}
+function closeModal(id){document.getElementById(id).classList.remove("show")}
+function login(){if(document.getElementById("loginId").value==="admin"&&document.getElementById("loginPass").value===pass){closeModal("loginModal");document.getElementById("adminModal").classList.add("show");renderAdmin()}else document.getElementById("loginMsg").textContent="Login ID किंवा Password चुकीचा आहे."}
+function tab(id,b){document.querySelectorAll(".panel").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));b.classList.add("active")}
+
+async function uploadToStorage(bucket,path,file){
+ const {error}=await supabaseClient.storage.from(bucket).upload(path,file,{upsert:false});
+ if(error) throw error;
+ const {data}=supabaseClient.storage.from(bucket).getPublicUrl(path);
+ return data.publicUrl;
+}
+async function addNews(){
+ let mr=document.getElementById("nmr").value.trim(),hi=document.getElementById("nhi").value.trim(),en=document.getElementById("nen").value.trim();
+ if(!mr&&!hi&&!en){alert("किमान एक मथळा भरा.");return}
+ const btn=event?.target; if(btn)btn.disabled=true;
+ try{
+  let imgUrl="";
+  let f=document.getElementById("nimg").files[0];
+  if(f) imgUrl=await uploadToStorage("news-images",Date.now()+"-"+f.name.replace(/[^a-zA-Z0-9._-]/g,"_"),f);
+  const row={cat:document.getElementById("ncat").value,date:new Date().toLocaleDateString("mr-IN"),title_mr:mr,title_hi:hi,title_en:en,body_mr:document.getElementById("tmr").value,body_hi:document.getElementById("thi").value,body_en:document.getElementById("ten").value,source:document.getElementById("nsource").value,image_url:imgUrl};
+  const {error}=await supabaseClient.from("news").insert(row);
+  if(error)throw error;
+  ["nmr","nhi","nen","tmr","thi","ten"].forEach(id=>document.getElementById(id).value="");document.getElementById("nimg").value="";
+  await loadData();renderAdmin();alert("बातमी Supabase मध्ये प्रकाशित झाली.");
+ }catch(e){console.error(e);alert("बातमी सेव्ह झाली नाही. Supabase tables/storage आणि Project URL तपासा.")}
+ finally{if(btn)btn.disabled=false}
+}
+async function addPaper(){
+ let f=document.getElementById("paperFile").files[0];if(!f){alert("PDF निवडा.");return}
+ try{
+  let path=Date.now()+"-"+f.name.replace(/[^a-zA-Z0-9._-]/g,"_");
+  let fileUrl=await uploadToStorage("epapers",path,f);
+  const {error}=await supabaseClient.from("epapers").insert({title:document.getElementById("paperTitle").value||"आजचा E-Paper",file_url:fileUrl});
+  if(error)throw error;
+  document.getElementById("paperFile").value="";document.getElementById("paperTitle").value="";
+  await loadData();renderAdmin();alert("E-Paper Supabase मध्ये सेव्ह झाला.");
+ }catch(e){console.error(e);alert("E-Paper सेव्ह झाला नाही. epapers table/storage तपासा.")}
+}
+async function delNews(id){if(!confirm("ही बातमी delete करायची?"))return;const {error}=await supabaseClient.from("news").delete().eq("id",id);if(error){alert("Delete झाले नाही.");return}await loadData();renderAdmin()}
+async function delPaper(id){if(!confirm("हा E-Paper delete करायचा?"))return;const {error}=await supabaseClient.from("epapers").delete().eq("id",id);if(error){alert("Delete झाले नाही.");return}await loadData();renderAdmin()}
+function renderAdmin(){document.getElementById("adminNews").innerHTML=news.slice().reverse().map(n=>`<div class="adminrow"><img src="${n.img||"logo-4.jpg"}"><div class="grow"><b>${esc(n.title.mr||n.title.hi||n.title.en)}</b><div class="small">${esc(n.cat)} • ${esc(n.source)}</div></div><button class="danger" onclick="delNews(${n.id})">Delete</button></div>`).join("")||"<p class='empty'>अजून बातम्या नाहीत.</p>";document.getElementById("adminPaper").innerHTML=papers.map(p=>`<div class="adminrow"><div class="grow"><b>${esc(p.title)}</b></div><a class="primary" style="padding:7px 10px" href="${p.file}" target="_blank">PDF</a><button class="danger" onclick="delPaper(${p.id})">Delete</button></div>`).join("")||"<p class='empty'>अजून E-Paper नाही.</p>"}
+function changePassword(){let a=document.getElementById("oldPass").value,b=document.getElementById("newPass").value,c=document.getElementById("newPass2").value;if(a!==pass){document.getElementById("passMsg").textContent="Current Password चुकीचा आहे.";return}if(b.length<8||b!==c){document.getElementById("passMsg").textContent="नवीन Password किमान 8 अक्षरांचा आणि दोन्ही ठिकाणी समान असावा.";return}pass=b;localStorage.setItem("ga_pass",pass);document.getElementById("passMsg").textContent="Password यशस्वीपणे बदलला."}
+window.addEventListener("hashchange",()=>{let h=location.hash;if(h.startsWith("#article-"))openArticle(Number(h.slice(9)))});
+loadData();
+</script>
+</body>
+</html>
