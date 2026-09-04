@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>गंगा अटल — दैनिक मराठी न्यूज पोर्टल</title>
+<title>गंगा अटल - 04 Sep 2026 - Page 1</title>
 <meta name="description" content="अटल धारा अटल निश्चय - गंगा अटल | आपकी आवाज़ - आपकी खबर. आज का ई-पेपर पढ़ने के लिए नीचे दिए गए लिंक पर क्लिक करें।">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="गंगा अटल">
@@ -419,41 +419,6 @@ html,body{max-width:100%;overflow-x:hidden}
   .ticker{font-size:12px!important;padding-left:8px!important;padding-right:8px!important}
   .search{grid-template-columns:minmax(0,1fr) 82px!important}
   .search button{min-width:82px}
-}
-
-
-/* ===== FINAL MOBILE SAFETY PATCH ===== */
-@media (max-width:850px){
-  *,*::before,*::after{max-width:100%;}
-  html{width:100%;overflow-x:hidden;}
-  body{width:100%;overflow-x:hidden;}
-  .mobileBrandBar{width:100%;box-sizing:border-box;}
-  .mobileBrandBar .mLogo{max-width:none;width:auto;min-width:0;}
-  .nav{width:100%;overflow:hidden;}
-  .navin{display:flex!important;width:100%;max-width:100%;}
-  .nav a{display:block;flex:0 0 auto;}
-  .search{width:calc(100% - 20px)!important;margin-left:10px!important;margin-right:10px!important;}
-  .search input{font-size:16px!important;}
-  .search button{white-space:nowrap;}
-  .hero,.hero img,.news,.news img,.adSlider{max-width:100%!important;}
-  .cards{width:100%!important;}
-  .news h3,.title,.sect h2,.overlay h1{overflow-wrap:anywhere;word-break:break-word;}
-  .sharebar{width:100%;}
-  .sharebtn{min-height:42px;}
-  footer{width:100%;overflow:hidden;}
-}
-@media (max-width:520px){
-  .mobileBrandBar{padding-left:7px;padding-right:7px;gap:6px;}
-  .mobileBrandBar .mMenu{width:38px;height:40px;font-size:27px;flex:0 0 38px;}
-  .mobileBrandBar .mLogo{height:37px!important;flex:1 1 auto!important;width:auto!important;}
-  .mobileBrandBar .mJoin{flex:0 0 auto;}
-  .mobileBrandBar .mIcon{flex:0 0 30px;font-size:20px;}
-  .nav a{padding-left:12px!important;padding-right:12px!important;}
-  main.wrap{padding-left:0!important;padding-right:0!important;}
-  .adSection{padding-left:0!important;padding-right:0!important;}
-  .search{margin-left:8px!important;margin-right:8px!important;width:calc(100% - 16px)!important;}
-  .cards{grid-template-columns:1fr 1fr!important;}
-  .news .body{min-width:0;}
 }
 
 </style>
@@ -1456,7 +1421,7 @@ function fitPage(){
   const stage=document.getElementById("pdfStage"),c=document.getElementById("pdfCanvas");
   if(!c.width||!c.height)return;
   const availW=Math.max(300,stage.clientWidth-36),availH=Math.max(300,stage.clientHeight-36);
-  clipScale=Math.min(availW/c.width,availH/c.height);
+  clipScale=Math.min(availW/c.width*clipScale,availH/c.height*clipScale);
   clipScale=Math.max(.25,Math.min(2.5,clipScale));
   renderReaderPage();
 }
