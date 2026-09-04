@@ -475,7 +475,7 @@ html,body{max-width:100%;overflow-x:hidden}
 <hr><h3>Published Advertisements</h3><div id="adminAds"></div></section>
 
 <section class="panel" id="paperPanel"><h3>📄 E-Paper</h3><div class="field"><label>Edition / Date</label><input id="paperTitle" placeholder="आजचा E-Paper"></div>
-<div class="field"><label>PDF File</label><input id="paperFile" type="file" accept="application/pdf"></div><div class="note">⚡ PDF अपलोड केल्यानंतर Page 1 चा Share Cover आपोआप तयार होईल. रोज वेगळा फोटो देण्याची गरज नाही.</div><button class="primary" onclick="addPaper()">PDF अपलोड करा</button><div id="adminPaper"></div></section>
+<div class="field"><label>PDF File</label><input id="paperFile" type="file" accept="application/pdf"></div><button class="primary" onclick="addPaper()">PDF अपलोड करा</button><div id="adminPaper"></div></section>
 
 <section class="panel" id="clipAdminPanel">
 <h3>✂️ मॅन्युअल न्यूज क्लिपिंग</h3>
@@ -586,15 +586,8 @@ html,body{max-width:100%;overflow-x:hidden}
   </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs" type="module"></script>
 <script>
-/* Compatibility for older Android browsers / WebViews. */
-if(!Promise.withResolvers){
-  Promise.withResolvers=function(){
-    let resolve,reject;
-    const promise=new Promise((res,rej)=>{resolve=res;reject=rej;});
-    return {promise,resolve,reject};
-  };
-}
 const SUPABASE_URL = "https://ovuequngufjaohlwpayx.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_5KyK_j50kmZDtFRkVvyKCg_jE1gglvg";
 const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
@@ -888,7 +881,7 @@ async function uploadEpaperPage1AsShareCover(file){
   if(!blob) throw new Error("पहिल्या पानाचा cover तयार झाला नाही.");
   const path="epaper-share/cover.jpg";
   const {error}=await supabaseClient.storage.from("news-images").upload(path,blob,{
-    contentType:"image/jpeg",upsert:true,cacheControl:"60"
+    contentType:"image/jpeg",upsert:true,cacheControl:"0"
   });
   if(error) throw error;
   return supabaseClient.storage.from("news-images").getPublicUrl(path).data.publicUrl;
@@ -904,21 +897,17 @@ async function addPaper(){
   const {data:paper,error}=await supabaseClient.from("epapers").insert({title,file_url:fileUrl}).select("id,title,file_url").single();
   if(error)throw error;
 
-  // PDF सेव्ह झाल्यावर Page-1 share cover तयार करा. Viewer/cover processing मुळे
-  // मुख्य upload अडकू नये म्हणून cover तयार करण्यासाठी स्वतंत्र try ठेवला आहे.
-  let coverOk=false;
+  // PDF upload होताच Page 1 चा share cover automatic तयार करा.
   try{
     await uploadEpaperPage1AsShareCover(f);
-    coverOk=true;
   }catch(coverErr){
     console.warn("Daily E-paper cover failed:",coverErr);
+    alert("⚠️ E-Paper सेव्ह झाला, पण Page-1 Share Cover तयार झाला नाही. PDF/Storage तपासा.");
   }
 
   document.getElementById("paperFile").value="";document.getElementById("paperTitle").value="";
   await loadData();renderAdmin();
-  alert(coverOk
-    ? "✅ E-Paper प्रकाशित झाला. Page 1 चा Share Photo आपोआप तयार झाला आहे."
-    : "✅ E-Paper प्रकाशित झाला. ⚠️ Page 1 Share Photo तयार झाला नाही; Storage/PDF तपासा.");
+  alert("✅ E-Paper प्रकाशित झाला. Page 1 चा Share Photo आपोआप तयार झाला आहे.");
  }catch(e){console.error(e);alert("❌ E-Paper सेव्ह झाला नाही: "+(e.message||"Storage/table तपासा."))}
  finally{if(btn)btn.disabled=false}
 }
@@ -988,43 +977,13 @@ let pdfLib=null,pdfDoc=null,clipPaperId=null,clipPaperTitle="",clipPage=1,clipSc
 let clipRendering=false,clipDataUrl="",clipPublicUrl="",smartItems=[],smartLines=[],currentBounds=null;
 let pageThumbsRendered=false;
 
-/* ===== MOBILE-SAFE PDF.JS LOADER =====
-   PDF.js 4.x uses Promise.withResolvers(), which is missing in some
-   Android browsers / WebViews. Use the stable 3.11.174 build instead.
-   It also avoids dynamic import() compatibility problems on older phones.
-*/
-const pdfjsReady=new Promise((resolve)=>{
+const pdfjsReady=(async()=>{
   try{
-    if(window.pdfjsLib){
-      pdfLib=window.pdfjsLib;
-      pdfLib.GlobalWorkerOptions.workerSrc="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
-      resolve(true);
-      return;
-    }
-    const script=document.createElement("script");
-    script.src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js";
-    script.async=true;
-    script.onload=()=>{
-      try{
-        if(!window.pdfjsLib) throw new Error("PDF.js library उपलब्ध नाही.");
-        pdfLib=window.pdfjsLib;
-        pdfLib.GlobalWorkerOptions.workerSrc="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
-        resolve(true);
-      }catch(e){
-        console.error("PDF.js setup error:",e);
-        resolve(false);
-      }
-    };
-    script.onerror=(e)=>{
-      console.error("PDF.js load error:",e);
-      resolve(false);
-    };
-    document.head.appendChild(script);
-  }catch(e){
-    console.error("PDF.js loader error:",e);
-    resolve(false);
-  }
-});
+    pdfLib=await import("https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs");
+    pdfLib.GlobalWorkerOptions.workerSrc="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs";
+    return true;
+  }catch(e){console.error(e);return false}
+})();
 
 async function updateEpaperShareMeta(p){
   const title = String(p?.title||"").trim();
